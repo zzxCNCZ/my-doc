@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Jenkins基本使用 | Hello VuePress2</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="Hello, my friend!">
+    <link rel="preload" href="/assets/css/0.styles.7ff0489b.css" as="style"><link rel="preload" href="/assets/js/app.0a9f859e.js" as="script"><link rel="preload" href="/assets/js/2.0a1de700.js" as="script"><link rel="preload" href="/assets/js/9.b23e8a71.js" as="script"><link rel="prefetch" href="/assets/js/10.0b2efc69.js"><link rel="prefetch" href="/assets/js/3.74f36777.js"><link rel="prefetch" href="/assets/js/4.60dd998b.js"><link rel="prefetch" href="/assets/js/5.fb5d71e9.js"><link rel="prefetch" href="/assets/js/6.83b03a85.js"><link rel="prefetch" href="/assets/js/7.159f4c1d.js"><link rel="prefetch" href="/assets/js/8.b2767979.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.7ff0489b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Hello VuePress2</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/tools/" class="nav-link router-link-active">
+  Tools
+</a></div><div class="nav-item"><a href="/java/" class="nav-link">
+  Java
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/tools/" class="nav-link router-link-active">
+  Tools
+</a></div><div class="nav-item"><a href="/java/" class="nav-link">
+  Java
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Jenkins</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/tools/jenkins/jenkins-usage.html" aria-current="page" class="active sidebar-link">Jenkins基本使用</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/tools/jenkins/jenkins-docker-build-image.html" class="sidebar-link">Jenkins自动化部署docker镜像全过程</a></li><li><a href="/tools/jenkins/jenkins-gitlab-auto-devops.html" class="sidebar-link">Jenkins 配合Gitlab自动化构建项目</a></li><li><a href="/tools/jenkins/jenkins-vue-project.html" class="sidebar-link">Jenkins自动化部署Vue项目前端及后端</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="jenkins使用"><a href="#jenkins使用" class="header-anchor">#</a> Jenkins使用</h3> <h5 id="使用公钥私钥连接github"><a href="#使用公钥私钥连接github" class="header-anchor">#</a> 使用公钥私钥连接github</h5> <div class="language-shell extra-class"><pre class="language-shell"><code>ssh-keygen -t rsa -C “bluedrum@qq.com”
+
+<span class="token function">cat</span> <span class="token operator">&gt;&gt;</span> ~/.ssh/authorized_keys <span class="token operator">&lt;</span> ~/.ssh/id_rsa.pub
+</code></pre></div> <h5 id="在docker中运行jenkins"><a href="#在docker中运行jenkins" class="header-anchor">#</a> 在docker中运行jenkins</h5> <ol><li>在linux上安装java，git，docker</li> <li>运行命令</li></ol> <div class="language-shell extra-class"><pre class="language-shell"><code>  docker run <span class="token punctuation">\</span>
+  -u root <span class="token punctuation">\</span>
+  -p <span class="token number">8080</span>:8080 <span class="token punctuation">\</span>
+  -p <span class="token number">50000</span>:50000 <span class="token punctuation">\</span>
+  -v jenkins-data:/var/jenkins_home <span class="token punctuation">\</span>
+  -v /var/run/docker.sock:/var/run/docker.sock <span class="token punctuation">\</span>
+  -v <span class="token string">&quot;<span class="token environment constant">$HOME</span>&quot;</span>:/home <span class="token punctuation">\</span>
+  --name jenkins-zzx <span class="token punctuation">\</span>
+  jenkinsci/blueocean
+</code></pre></div><h5 id="使用maven构建java应用程序"><a href="#使用maven构建java应用程序" class="header-anchor">#</a> 使用Maven构建Java应用程序</h5> <h5 id="在ubuntu中直接安装jenkins"><a href="#在ubuntu中直接安装jenkins" class="header-anchor">#</a> 在Ubuntu中直接安装jenkins</h5> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">wget</span> -q -O - https://pkg.jenkins.io/debian/jenkins.io.key <span class="token operator">|</span> <span class="token function">sudo</span> apt-key <span class="token function">add</span> -
+<span class="token function">sudo</span> <span class="token function">sh</span> -c <span class="token string">'echo deb http://pkg.jenkins.io/debian-stable binary/ &gt; /etc/apt/sources.list.d/jenkins.list'</span>
+<span class="token function">sudo</span> <span class="token function">apt-get</span> update
+<span class="token builtin class-name">echo</span> y<span class="token operator">|</span><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> jenkins
+
+</code></pre></div><ul><li><p>遇到问题 No Java executable found in current PATH: /bin:/usr/bin:/sbin:/usr/sbin</p></li> <li><p>解决方案：</p></li> <li><div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment"># 给/usr/bin添加	jdk软链接</span>
+<span class="token function">ln</span> -s /usr/jdk1.8.0_131/bin/java /usr/bin/java
+</code></pre></div></li> <li><p>启动后无法访问的情况</p></li> <li><p>解决方案：先安装openjdk，再不行的话重启服务器</p></li> <li><p>Jenkins 离线解决方案：</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token number">1</span>.访问/pluginManager/advanced 页修改
+http://updates.jenkins.io/update-center.json
+<span class="token number">2</span>.如果还是不行
+修改/jenkins_home/update/default.json
+其中www.google.com改为www.baidu.com
+
+</code></pre></div></li></ul> <h5 id="ubuntu中jenkins运行命令"><a href="#ubuntu中jenkins运行命令" class="header-anchor">#</a> Ubuntu中jenkins运行命令</h5> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">sudo</span> <span class="token function">service</span> jenkins start<span class="token operator">|</span>stop<span class="token operator">|</span>restart
+</code></pre></div><h5 id="卸载jenkins"><a href="#卸载jenkins" class="header-anchor">#</a> 卸载Jenkins</h5> <div class="language-shell extra-class"><pre class="language-shell"><code>//服务
+<span class="token function">sudo</span> <span class="token function">apt-get</span> remove jenkins
+
+//安装包，注意这里如果不是ubuntu那就yum
+<span class="token function">sudo</span> <span class="token function">apt-get</span> remove --auto-remove jenkins
+
+//配置和数据
+<span class="token function">sudo</span> <span class="token function">apt-get</span> purge jenkins
+
+<span class="token function">sudo</span> <span class="token function">apt-get</span> purge --auto-remove jenkins
+</code></pre></div><h5 id="将jenkins加入到docker-用户组"><a href="#将jenkins加入到docker-用户组" class="header-anchor">#</a> 将jenkins加入到docker 用户组</h5> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment"># 将Jenkins 加入到Docker 用户组</span>
+<span class="token function">sudo</span> gpasswd -a jenkins docker
+<span class="token comment"># 重启进程</span>
+systemctl daemon-reload
+systemctl restart docker
+<span class="token comment"># 重启jenkins</span>
+<span class="token function">service</span> jenkins restart
+</code></pre></div><h5 id="使用maven镜像问题"><a href="#使用maven镜像问题" class="header-anchor">#</a> 使用maven镜像问题</h5> <div class="language-shell extra-class"><pre class="language-shell"><code>会导致.m2在独立的workspace下，可以通过使用本地maven来解决
+安装maven插件
+</code></pre></div><h5 id="运行-sh文件提示permission-denied"><a href="#运行-sh文件提示permission-denied" class="header-anchor">#</a> 运行.sh文件提示permission denied</h5> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">chmod</span> <span class="token number">777</span> test.sh
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/tools/jenkins/jenkins-docker-build-image.html">
+        Jenkins自动化部署docker镜像全过程
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.0a9f859e.js" defer></script><script src="/assets/js/2.0a1de700.js" defer></script><script src="/assets/js/9.b23e8a71.js" defer></script>
+  </body>
+</html>
