@@ -1,6 +1,9 @@
 module.exports = {
     title: 'Hello World',
     description: 'Hello, my friend!',
+    markdown: {
+        lineNumbers: true
+    },
     head: [
         ['link', {
             rel: 'icon',
@@ -8,6 +11,9 @@ module.exports = {
         }]
     ],
     themeConfig: {
+        logo: "/hero.png",
+        sidebarDepth: 2,
+        lastUpdated: "Last Updated",
         nav: [
             { text: "Home", link: "/" },
             { text: "Tools", link: "/tools/" },
