@@ -25,6 +25,15 @@ module.exports = {
                         "jenkins-vue-project"
                     ].map((i) => `jenkins/${i}`),
                 }
+            ],
+            "/java/": [
+                {
+                    title: "springboot",
+                    collapsable: false,
+                    children: [
+                        "maven"
+                    ].map((i) => `springboot/${i}`),
+                }
             ]
         },
     },
