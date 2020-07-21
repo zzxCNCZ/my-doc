@@ -1,9 +1,6 @@
 .DS_Store
 node_modules/
-dist/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+.vuepress/dist/
 **/*.log
 
 tests/**/coverage/
@@ -22,9 +19,6 @@ selenium-debug.log
 package-lock.json
 yarn.lock
 
-mock/
-plop-templates/
-plopfile.js
 
 # ignore deploy sh
 DeployPatrol.sh
