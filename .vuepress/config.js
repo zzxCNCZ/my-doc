@@ -1,5 +1,5 @@
 module.exports = {
-    title: 'Hello VuePress2',
+    title: 'Hello World',
     description: 'Hello, my friend!',
     head: [
         ['link', {
@@ -28,7 +28,7 @@ module.exports = {
             ],
             "/java/": [
                 {
-                    title: "springboot",
+                    title: "Springboot",
                     collapsable: false,
                     children: [
                         "maven"
