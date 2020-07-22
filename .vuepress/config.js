@@ -7,11 +7,11 @@ module.exports = {
     head: [
         ['link', {
             rel: 'icon',
-            href: `/favicon.ico`
+            href: `/banksy.ico`
         }]
     ],
     themeConfig: {
-        logo: "/hero.png",
+        logo: "/banksy.png",
         sidebarDepth: 2,
         lastUpdated: "Last Updated",
         nav: [

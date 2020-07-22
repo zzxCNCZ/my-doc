@@ -19,6 +19,3 @@ selenium-debug.log
 package-lock.json
 yarn.lock
 
-
-# ignore deploy sh
-DeployPatrol.sh

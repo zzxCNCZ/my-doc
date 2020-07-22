@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /hero.png
+heroImage: /banksy.png
 heroText: Banksy's Doc
 tagline: You cannot improve your past, but you can improve your future. Once time is wasted, life is wasted.
          
@@ -13,5 +13,5 @@ tagline: You cannot improve your past, but you can improve your future. Once tim
          Keep on going never give up.
 actionText: Continue →
 actionLink: /tools/
-footer: MIT Licensed | Copyright © 2020 banksy
+footer: MIT Licensed | Copyright © 2020 zhuangzexin.top
 ---
