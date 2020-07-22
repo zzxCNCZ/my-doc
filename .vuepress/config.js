@@ -17,7 +17,21 @@ module.exports = {
         nav: [
             { text: "Home", link: "/" },
             { text: "Tools", link: "/tools/" },
-            { text: "Java", link: "/java/" }
+            { text: "Java", link: "/java/" },
+            {
+                text: 'Linux',
+                ariaLabel: 'Linux Menu',
+                items: [
+                    { text: '文件操作',
+                        items: [
+                            { text: "file", link: "/linux/" }
+                        ]
+                    },
+                    { text: 'tools', link: '/tools/' },
+                    { text: 'java', link: '/java/' }
+                ]
+            },
+            { text: 'External', link: 'https://blog.zhuangzexin.top', target:'_self', rel:'' },
         ],
         sidebar: {
             "/tools/": [
@@ -40,7 +54,18 @@ module.exports = {
                         "maven"
                     ].map((i) => `springboot/${i}`),
                 }
-            ]
+            ],
+            "/linux/": [
+                {
+                    title: "File",
+                    collapsable: false,
+                    children: [
+                        "build-in-json",
+                        "build-in-date",
+                        "common"
+                    ].map((i) => `file/${i}`),
+                }
+            ],
         },
     },
     ga: '',
