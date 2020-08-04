@@ -27,6 +27,11 @@ module.exports = {
                             { text: "file", link: "/linux/" }
                         ]
                     },
+                    { text: '常规',
+                        items: [
+                            { text: "common", link: "/linux/" }
+                        ]
+                    },
                     { text: 'tools', link: '/tools/' },
                     { text: 'java', link: '/java/' }
                 ]
@@ -60,10 +65,24 @@ module.exports = {
                     title: "File",
                     collapsable: false,
                     children: [
-                        "build-in-json",
-                        "build-in-date",
-                        "common"
+                        "common",
+                        "cp",
+                        "mv",
+                        "tar",
+                        "find",
+                        "grep",
+                        "tail",
+                        "cat",
+                        "more-less",
+                        "sed"
                     ].map((i) => `file/${i}`),
+                },
+                {
+                    title: "Common",
+                    collapsable: false,
+                    children: [
+                        "common"
+                    ].map((i) => `common/${i}`),
                 }
             ],
         },
