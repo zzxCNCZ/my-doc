@@ -21,19 +21,28 @@ module.exports = {
             {
                 text: 'Linux',
                 ariaLabel: 'Linux Menu',
+                link: "/linux/",
                 items: [
                     { text: '文件操作',
                         items: [
-                            { text: "file", link: "/linux/" }
+                            { text: "file", link: "/linux/file/" }
                         ]
                     },
                     { text: '常规',
                         items: [
-                            { text: "common", link: "/linux/" }
+                            { text: "common", link: "/linux/common/" }
+                            ]
+                    },
+                    { text: '系统',
+                        items: [
+                            { text: "system", link: "/linux/system/" }
                         ]
                     },
-                    { text: 'tools', link: '/tools/' },
-                    { text: 'java', link: '/java/' }
+                    { text: 'Vim',
+                        items: [
+                            { text: "vim", link: "/linux/vim/" }
+                            ]
+                    }
                 ]
             },
             { text: 'External', link: 'https://blog.zhuangzexin.top', target:'_self', rel:'' },
@@ -83,6 +92,26 @@ module.exports = {
                     children: [
                         "common"
                     ].map((i) => `common/${i}`),
+                },
+                {
+                    title: "System",
+                    collapsable: false,
+                    children: [
+                        "network",
+                        "disk",
+                        "status"
+                    ].map((i) => `system/${i}`),
+                },
+                {
+                    title: "Vim",
+                    collapsable: false,
+                    children: [
+                        "common",
+                        "edit",
+                        "move",
+                        "search",
+                        "annotation"
+                    ].map((i) => `vim/${i}`),
                 }
             ],
         },
