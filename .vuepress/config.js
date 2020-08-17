@@ -16,7 +16,25 @@ module.exports = {
         lastUpdated: "Last Updated",
         nav: [
             { text: "Home", link: "/" },
-            { text: "Tools", link: "/tools/" },
+            {
+                text: "Tools",
+                link: "/tools/",
+                ariaLabel: 'Tools',
+                items: [
+                    { text: '持续集成',
+                        items: [
+                            { text: "Jenkins", link: "/tools/jenkins/" }
+                        ]
+                    },
+                    { text: 'Docker',
+                        items: [
+                            { text: "Docker", link: "/tools/docker/"},
+                            { text: "docker-compose", link: "/tools/docker-compose/"},
+                            { text: "Dockerfile", link: "/tools/Dockerfile/"}
+                        ]
+                    }
+                ]
+            },
             { text: "Java", link: "/java/" },
             {
                 text: 'Linux',
@@ -45,7 +63,7 @@ module.exports = {
                     }
                 ]
             },
-            { text: 'External', link: 'https://blog.zhuangzexin.top', target:'_self', rel:'' },
+            { text: 'Blog', link: 'https://blog.zhuangzexin.top', target:'_self', rel:'' },
         ],
         sidebar: {
             "/tools/": [
@@ -58,6 +76,17 @@ module.exports = {
                         "jenkins-gitlab-auto-devops",
                         "jenkins-vue-project"
                     ].map((i) => `jenkins/${i}`),
+                },
+                {
+                    title: "docker",
+                    collapsable: false,
+                    children: [
+                        "install-setting",
+                        "command",
+                        "network",
+                        "other",
+                        "example"
+                    ].map((i) => `docker/${i}`),
                 }
             ],
             "/java/": [
