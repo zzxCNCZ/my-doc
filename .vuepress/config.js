@@ -32,6 +32,16 @@ module.exports = {
                             { text: "docker-compose", link: "/tools/docker-compose/"},
                             { text: "Dockerfile", link: "/tools/Dockerfile/"}
                         ]
+                    },
+                    { text: '版本控制',
+                        items: [
+                            { text: "Git", link: "/tools/git/" }
+                        ]
+                    },
+                    { text: '其他',
+                        items: [
+                            { text: "Nginx", link: "/tools/nginx/" }
+                        ]
                     }
                 ]
             },
@@ -87,7 +97,24 @@ module.exports = {
                         "other",
                         "example"
                     ].map((i) => `docker/${i}`),
-                }
+                },
+                {
+                    title: "Git",
+                    collapsable: false,
+                    children: [
+                        "common",
+                        "branch"
+                    ].map((i) => `git/${i}`),
+                },
+                {
+                    title: "Nginx",
+                    collapsable: false,
+                    children: [
+                        "common",
+                        "setting",
+                        "problem"
+                    ].map((i) => `nginx/${i}`),
+                },
             ],
             "/java/": [
                 {
