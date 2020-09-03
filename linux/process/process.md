@@ -1,6 +1,6 @@
 # 进程操作
 > 常用进程操作
-- 查看进程状态
+### 查看进程状态 ps
 ```shell script
 # 根据名称 查看进程
 ps -ef|grep name

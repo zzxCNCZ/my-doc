@@ -1,7 +1,7 @@
 # 硬盘
 > 硬盘分区操作
 
-### 查看状态
+### 查看状态 fdisk df
 ```shell script
 # 查看所有硬盘信息
 sudo fdisk -l
@@ -14,7 +14,7 @@ du -lh --max-depth=1
 badblocks -v /dev/sda > badsectors.txt
    
 ```
-### 挂载
+### 挂载 mount
 ```shell script
 # 格式化为ext4分区
 mkfs.ext4 /dev/sdd1

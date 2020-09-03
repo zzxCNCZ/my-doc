@@ -1,5 +1,5 @@
 # nohup
-> nohup 后台启动任务
+>  后台启动任务
 ```shell script
 # 挂起服务 退出终端不断开
 nohup ./test.sh &  

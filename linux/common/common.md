@@ -32,7 +32,7 @@ scp -P 9022  admin@192.168.1.181:/root/frp/frpc /Users/mac/Downloads
 # 本地到远程
 scp -P 9022   /Users/mac/Downloads/v2ray-linux-arm.zip  admin@192.168.1.181:/tmp/share/sda1  
 ```
-### 添加用户
+### 添加用户 adduser
 ```shell script
 adduser linuxidc
 
@@ -49,7 +49,7 @@ linuxidc  ALL=(ALL)       ALL  #这个是新增的用户
 # 还原权限
 chmod -v u-w /etc/sudoers
 ```
-### 权限
+### 权限 chown chmod
 ```shell script
 chown -R www-data:www-data db nextcloud
 # 给media文件夹下所有文件加入82用户组

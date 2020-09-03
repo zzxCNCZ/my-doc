@@ -1,5 +1,6 @@
 # 任务切换
 > 前后台任务切换
+### job
 ```shell script
 command &   //将进程放在后台执行
 ctrl-z      //暂停当前进程 并放入后台

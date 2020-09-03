@@ -1,17 +1,18 @@
 # common
 > 常规操作
-- 列出文件列表
+
+### 列出文件列表 ls ll
 ```shell script
 ls  -a 显示所有   -l 长格式显示
 ll
 ```
-- 目录跳转
+### 目录跳转 cd
 ```shell script
 cd / 进入根目录
 cd .. 进入上级目录
 cd ～ 回到home目录
 ```
-- 文件夹（文件）操作
+### 文件夹（文件）操作 mkdir rm 
 ```shell script
 # 创建文件夹
 mkdir 

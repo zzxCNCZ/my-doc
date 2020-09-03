@@ -1,6 +1,6 @@
 # 网络
 > 网络操作
-### 查看端口占用
+### 查看端口占用 netstat
 ```shell script
 # 查看3306 端口占用
 netstat -an | grep 3306
