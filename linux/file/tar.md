@@ -12,6 +12,8 @@ tar czvf test.tar.gz  .[!.]*
 tar zcvf /test/data.tar.gz -C /some/files .
 # 解压至指定目录
 tar zxvf FileName.tar -C /tmp 
+# 解压到当前目录下的 cloud 文件夹
+tar zxvf FileName.tar -C ./cloud .
 
 # 压缩
 zip -q -r xahot.zip /home/wwwroot/xahot
