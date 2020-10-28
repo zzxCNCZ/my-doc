@@ -7,4 +7,4 @@
 4. [编辑](/linux/vim/edit.md)
 5. [搜索](/linux/vim/search.md)
 :::
-![vim.jpg](http://blog.zhuangzexin.top:8082/images/2019/09/16/vim.jpg)
+![vim.jpg](https://chevereto.zhuangzexin.top/images/2019/09/16/vim.jpg)

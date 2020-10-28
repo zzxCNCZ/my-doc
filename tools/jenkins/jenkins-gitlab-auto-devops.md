@@ -15,7 +15,7 @@ jenkins 版本 [2.176.3](https://jenkins.io/)
 
 jenkins安装gitlab 插件，到插件管理中搜索gitlab
 
-![image.png](http://blog.zhuangzexin.top:8082/images/2019/09/26/image.png)
+![image.png](https://chevereto.zhuangzexin.top/images/2019/09/26/image.png)
 
 注意安装Gitlab Plugin即可，gitlab hook plugin貌似已经弃用了。
 <!--more-->
@@ -23,13 +23,13 @@ jenkins安装gitlab 插件，到插件管理中搜索gitlab
 
 在gitlab User Setting 中 Access Tokens中添加
 
-![imagefb19874d667620c0.png](http://blog.zhuangzexin.top:8082/images/2019/09/26/imagefb19874d667620c0.png)
+![imagefb19874d667620c0.png](https://chevereto.zhuangzexin.top/images/2019/09/26/imagefb19874d667620c0.png)
 
 图上的token为已经添加的状态，上面的选项可以全勾。然后复制暂时保存一下，下一步需要用到。
 
 在jenkins 系统管理中配置gitlab服务器连接
 
-![image06b49423d2edad25.png](http://blog.zhuangzexin.top:8082/images/2019/09/26/image06b49423d2edad25.png)
+![image06b49423d2edad25.png](https://chevereto.zhuangzexin.top/images/2019/09/26/image06b49423d2edad25.png)
 
 **注意**Enable authentication for '/project' end-point 取消该选项，否则gitlab 推送webhook会报 **403 anonymous is missing the Job/Build permission** 的错误。
 
@@ -39,11 +39,11 @@ jenkins安装gitlab 插件，到插件管理中搜索gitlab
 
 首先要在jenkins新建一个任务，本文新建了一个自由风格的项目。然后配置仓库地址
 
-![image5f19704eb15e48ff.png](http://blog.zhuangzexin.top:8082/images/2019/09/26/image5f19704eb15e48ff.png)
+![image5f19704eb15e48ff.png](https://chevereto.zhuangzexin.top/images/2019/09/26/image5f19704eb15e48ff.png)
 
 添加gitlab登陆密钥，使用username password 类型的密钥。
 
-![imageaacf902d2a125446.png](http://blog.zhuangzexin.top:8082/images/2019/09/26/imageaacf902d2a125446.png)
+![imageaacf902d2a125446.png](https://chevereto.zhuangzexin.top/images/2019/09/26/imageaacf902d2a125446.png)
 
 构建触发器选择 Build when a change is pushed to GitLab.  gitlab webhook的url就会给出。
 
@@ -53,7 +53,7 @@ jenkins安装gitlab 插件，到插件管理中搜索gitlab
 
 添加webhook，如果你的域名没有安装ssl证书，就不要勾选ssl verification
 
-![image8c19399e003790b7.png](http://blog.zhuangzexin.top:8082/images/2019/09/26/image8c19399e003790b7.png)
+![image8c19399e003790b7.png](https://chevereto.zhuangzexin.top/images/2019/09/26/image8c19399e003790b7.png)
 
 添加即可，可以测试push events ，如果返回200 即webhook推送成功。
 

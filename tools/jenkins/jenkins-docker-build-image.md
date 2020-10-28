@@ -44,7 +44,7 @@ tags:
 
 3. maven 构建配置
 
-   ![image.png](http://blog.zhuangzexin.top:8082/images/2020/03/27/image.png)
+   ![image.png](https://chevereto.zhuangzexin.top/images/2020/03/27/image.png)
 
    *这里使用的 docker:build 是maven安装了 docker镜像生成的插件，也可以不安装，那样就需要自己用命令构建镜像*
 
@@ -81,7 +81,7 @@ tags:
 
    *使用shell*
 
-   ![image8de90075cf8c6afa.png](http://blog.zhuangzexin.top:8082/images/2020/03/27/image8de90075cf8c6afa.png)
+   ![image8de90075cf8c6afa.png](https://chevereto.zhuangzexin.top/images/2020/03/27/image8de90075cf8c6afa.png)
 
    *shell 命令：*
 
@@ -134,11 +134,11 @@ tags:
 
    *使用docker plugin插件*
 
-   ![image2db23fa7a7e5409c.png](http://blog.zhuangzexin.top:8082/images/2020/03/27/image2db23fa7a7e5409c.png)
+   ![image2db23fa7a7e5409c.png](https://chevereto.zhuangzexin.top/images/2020/03/27/image2db23fa7a7e5409c.png)
 
 5. 目标机器上pull仓库并执行
 
-   ![image54284e3a8fcc509a.png](http://blog.zhuangzexin.top:8082/images/2020/03/27/image54284e3a8fcc509a.png)
+   ![image54284e3a8fcc509a.png](https://chevereto.zhuangzexin.top/images/2020/03/27/image54284e3a8fcc509a.png)
 
    *bash 命令：*
 

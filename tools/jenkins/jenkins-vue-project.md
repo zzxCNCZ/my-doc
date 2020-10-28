@@ -63,37 +63,37 @@ sudo service jenkins start|stop|restart
 
   2. jenkins 系统管理，添加github服务器
 
-     ![image7ff5ffe40ec7192a.png](http://blog.zhuangzexin.top:8082/images/2019/09/18/image7ff5ffe40ec7192a.png)
+     ![image7ff5ffe40ec7192a.png](https://chevereto.zhuangzexin.top/images/2019/09/18/image7ff5ffe40ec7192a.png)
 
      密钥添加类型为 secret key，secret为上一步骤的access token
 
-     ![image81f44369e7a63f9a.png](http://blog.zhuangzexin.top:8082/images/2019/09/18/image81f44369e7a63f9a.png)
+     ![image81f44369e7a63f9a.png](https://chevereto.zhuangzexin.top/images/2019/09/18/image81f44369e7a63f9a.png)
 
   3. 设置github hook,找到对应的项目，setting->webhoosks->add webhook,之后接可以在每次提交代码后，github通知jenkins自动拉取代码，并自动构建
 
-     ![imagee67a2b274f6055f2.png](http://blog.zhuangzexin.top:8082/images/2019/09/18/imagee67a2b274f6055f2.png)
+     ![imagee67a2b274f6055f2.png](https://chevereto.zhuangzexin.top/images/2019/09/18/imagee67a2b274f6055f2.png)
 
 ##### 开始使用
 
 - 新建任任务，构建一个自由风格的软件项目
 
-  ![image14d3545f64cd9572.png](http://blog.zhuangzexin.top:8082/images/2019/09/18/image14d3545f64cd9572.png)
+  ![image14d3545f64cd9572.png](https://chevereto.zhuangzexin.top/images/2019/09/18/image14d3545f64cd9572.png)
 
   
 
 - 进入页面，源码管理，选git ，输入仓库地址，并添加密钥，密钥类型选择username and password即可
 
-  ![image1eadbd538c50d3ae.png](http://blog.zhuangzexin.top:8082/images/2019/09/18/image1eadbd538c50d3ae.png)
+  ![image1eadbd538c50d3ae.png](https://chevereto.zhuangzexin.top/images/2019/09/18/image1eadbd538c50d3ae.png)
 
 - 配置构建触发，和构建环境。这里构建的是vue项目，所以选择了node环境（需要安装nodejs插件）。
 
-  ![image106ce49d5c9702c8.png](http://blog.zhuangzexin.top:8082/images/2019/09/18/image106ce49d5c9702c8.png)
+  ![image106ce49d5c9702c8.png](https://chevereto.zhuangzexin.top/images/2019/09/18/image106ce49d5c9702c8.png)
 
 - 构建步骤，选择执行shell 及send file or excute commands over ssh。第一步为通过插件构建项目，并打包。第二步为传输到目标服务器，ssh server可以通过系统管理中添加ssh server实现。这边时传输到windows 服务器，windows服务器开启sftp传输需要依赖第三方软件，本文用的是powershell server 2016，[具体使用方法参考](https://blog.csdn.net/achenyuan/article/details/81181347)
 
-  ![imageaa96d92508b6a834.png](http://blog.zhuangzexin.top:8082/images/2019/09/18/imageaa96d92508b6a834.png)
+  ![imageaa96d92508b6a834.png](https://chevereto.zhuangzexin.top/images/2019/09/18/imageaa96d92508b6a834.png)
 
-![image5ba97e4a59dbf7cf.png](http://blog.zhuangzexin.top:8082/images/2019/09/18/image5ba97e4a59dbf7cf.png)
+![image5ba97e4a59dbf7cf.png](https://chevereto.zhuangzexin.top/images/2019/09/18/image5ba97e4a59dbf7cf.png)
 
 - 保存即可，此时如果本地提交代码，jenkins就可以自动拉取到代码，并自动打包传输到目标服务器。
 
@@ -127,7 +127,7 @@ sudo service jenkins start|stop|restart
 
   jenkins配置示例：
 
-  ![image404a5bc7631b92ae.png](http://blog.zhuangzexin.top:8082/images/2019/09/18/image404a5bc7631b92ae.png)
+  ![image404a5bc7631b92ae.png](https://chevereto.zhuangzexin.top/images/2019/09/18/image404a5bc7631b92ae.png)
 
   可以通过流水线语法，来生成pipeline代码。
 
