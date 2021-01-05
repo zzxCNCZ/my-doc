@@ -1,11 +1,12 @@
 # 基本命令
 > 基本命令
 
+### docker 基本命令
 ```shell script
  # 搜索公共仓库镜像
 docker search
 
- #下载镜像到本地
+ # 下载镜像到本地
 docker pull 'imageName'
 
 docker images # 查看docker镜像
@@ -58,4 +59,15 @@ exp:docker cp sbmysql.war 1dde5b08d489:/usr/local/tomcat/webapps
 docker update --restart=always xxx
 # 还可以在使用on - failure策略时，指定Docker将尝试重新启动容器的最大次数。默认情况下，Docker将尝试永远重新启动容器。
 docker run --restart=on-failure:10 redis 
+```
+
+### docker容器占用及清理
+```shell script
+# 查看docker信息
+docker info
+
+# 清理不在运行的container images
+docker system prune -a
+# 清理不使用的docker image
+docker image prune --all
 ```

@@ -1,7 +1,7 @@
-# 安装及配置
-> docker 安装及镜像加速配置
+# docker安装及配置
+> docker 安装及镜像、加速配置、根目录配置
 
-#### 安装
+#### docker安装
 ```shell script
 wget -qO- https://get.docker.com/ | sh
 # 非root用户使用
@@ -9,7 +9,7 @@ sudo usermod -aG docker +用户名
 newgrp docker     #更新用户组
 ```
 
-### 镜像加速
+### docker镜像加速
 ```shell script
 
 # 切换国内镜像
@@ -32,4 +32,24 @@ EOF
 sudo systemctl daemon-reload
 sudo systemctl restart docker
 
+```
+
+### docker容器目录迁移
+> 迁移前先关闭docker  service docker stop, 使用rsync 迁移 /var/lib/docker(docker默认目录)目录
+```shell script
+# 编辑docker daemon.json 
+vim /etc/docker/daemon.json
+
+# 加入配置
+"graph": "/new-path/docker"
+
+# 最终配置
+cat /etc/docker/daemon.json
+# 如下
+{
+  "registry-mirrors": ["https://kt5y1m25.mirror.aliyuncs.com"], "graph": "/new-path/docker"
+}
+
+sudo systemctl daemon-reload
+sudo systemctl restart docker
 ```

@@ -2,8 +2,8 @@
 
 ::: tip 包含以下模块
 1. [安装及配置](/tools/docker/install-setting.md)
-2. [移动光标](/linux/vim/move.md)
-3. [注释](/linux/vim/annotation.md)
-4. [编辑](/linux/vim/edit.md)
-5. [搜索](/linux/vim/search.md)
+2. [基本命令](/tools/docker/command.md)
+3. [网络设置](/tools/docker/network.md)
+4. [其他](/tools/docker/other.md)
+5. [例子](/tools/docker/example.md)
 :::
