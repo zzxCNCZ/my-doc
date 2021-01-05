@@ -46,6 +46,7 @@ module.exports = {
                 ]
             },
             { text: "Java", link: "/java/" },
+            { text: "Algorithm", link: "/algorithm/" },
             {
                 text: 'Linux',
                 ariaLabel: 'Linux Menu',
@@ -125,10 +126,14 @@ module.exports = {
                     ].map((i) => `springboot/${i}`),
                 }
             ],
+            "/algorithm/": [
+                '',
+                'test#22'
+            ],
             "/linux/": [
                 {
                     title: "File",
-                    collapsable: false,
+                    collapsable: true,
                     children: [
                         "common",
                         "cp",
@@ -144,7 +149,8 @@ module.exports = {
                 },
                 {
                     title: "Common",
-                    collapsable: false,
+                    collapsable: true,
+                    sidebarDepth: 3,
                     children: [
                         "common"
                     ].map((i) => `common/${i}`),
