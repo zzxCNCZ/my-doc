@@ -11,65 +11,65 @@ module.exports = {
         }]
     ],
     themeConfig: {
-        logo: "/banksy.png",
+        logo: '/banksy.png',
         sidebarDepth: 2,
-        lastUpdated: "Last Updated",
+        lastUpdated: 'Last Updated',
         nav: [
-            { text: "Home", link: "/" },
+            { text: 'Home', link: '/' },
             {
-                text: "Tools",
-                link: "/tools/",
+                text: 'Tools',
+                link: '/tools/',
                 ariaLabel: 'Tools',
                 items: [
                     { text: '持续集成',
                         items: [
-                            { text: "Jenkins", link: "/tools/jenkins/" }
+                            { text: 'Jenkins', link: '/tools/jenkins/' }
                         ]
                     },
                     { text: 'Docker',
                         items: [
-                            { text: "Docker", link: "/tools/docker/"},
-                            { text: "docker-compose", link: "/tools/docker-compose/"},
-                            { text: "Dockerfile", link: "/tools/Dockerfile/"}
+                            { text: 'Docker', link: '/tools/docker/'},
+                            { text: 'docker-compose', link: '/tools/docker-compose/'},
+                            { text: 'Dockerfile', link: '/tools/Dockerfile/'}
                         ]
                     },
                     { text: '版本控制',
                         items: [
-                            { text: "Git", link: "/tools/git/" }
+                            { text: 'Git', link: '/tools/git/' }
                         ]
                     },
                     { text: '其他',
                         items: [
-                            { text: "Nginx", link: "/tools/nginx/" }
+                            { text: 'Nginx', link: '/tools/nginx/' }
                         ]
                     }
                 ]
             },
-            { text: "Java", link: "/java/" },
-            { text: "Algorithm", link: "/algorithm/" },
+            { text: 'Java', link: '/java/' },
+            { text: 'Algorithm', link: '/algorithm/' },
             {
                 text: 'Linux',
                 ariaLabel: 'Linux Menu',
-                link: "/linux/",
+                link: '/linux/',
                 items: [
                     { text: '文件操作',
                         items: [
-                            { text: "file", link: "/linux/file/" }
+                            { text: 'file', link: '/linux/file/' }
                         ]
                     },
                     { text: '常规',
                         items: [
-                            { text: "common", link: "/linux/common/" }
+                            { text: 'common', link: '/linux/common/' }
                             ]
                     },
                     { text: '系统',
                         items: [
-                            { text: "system", link: "/linux/system/" }
+                            { text: 'system', link: '/linux/system/' }
                         ]
                     },
                     { text: 'Vim',
                         items: [
-                            { text: "vim", link: "/linux/vim/" }
+                            { text: 'vim', link: '/linux/vim/' }
                             ]
                     }
                 ]
@@ -77,102 +77,98 @@ module.exports = {
             { text: 'Blog', link: 'https://blog.zhuangzexin.top', target:'_self', rel:'' },
         ],
         sidebar: {
-            "/tools/": [
+            '/tools/': [
                 {
-                    title: "Jenkins",
+                    title: 'Jenkins',
                     collapsable: false,
                     children: [
-                        "jenkins-usage",
-                        "jenkins-docker-build-image",
-                        "jenkins-gitlab-auto-devops",
-                        "jenkins-vue-project"
+                        'jenkins-usage',
+                        'jenkins-docker-build-image',
+                        'jenkins-gitlab-auto-devops',
+                        'jenkins-vue-project'
                     ].map((i) => `jenkins/${i}`),
                 },
                 {
-                    title: "docker",
+                    title: 'docker',
                     collapsable: false,
                     children: [
-                        "install-setting",
-                        "command",
-                        "network",
-                        "other",
-                        "example"
+                        'install-setting',
+                        'command',
+                        'network',
+                        'other',
+                        'example'
                     ].map((i) => `docker/${i}`),
                 },
                 {
-                    title: "Git",
+                    title: 'Git',
                     collapsable: false,
                     children: [
-                        "common",
-                        "branch"
+                        'common',
+                        'branch'
                     ].map((i) => `git/${i}`),
                 },
                 {
-                    title: "Nginx",
+                    title: 'Nginx',
                     collapsable: false,
                     children: [
-                        "common",
-                        "setting",
-                        "problem"
+                        'common',
+                        'setting',
+                        'problem'
                     ].map((i) => `nginx/${i}`),
                 },
             ],
-            "/java/": [
+            '/java/': [
                 {
-                    title: "Springboot",
+                    title: 'Springboot',
                     collapsable: false,
                     children: [
-                        "maven"
+                        'maven'
                     ].map((i) => `springboot/${i}`),
                 }
             ],
-            "/algorithm/": [
-                '',
-                'test#22'
-            ],
-            "/linux/": [
+            '/linux/': [
                 {
-                    title: "File",
+                    title: 'File',
                     collapsable: true,
                     children: [
-                        "common",
-                        "cp",
-                        "mv",
-                        "tar",
-                        "find",
-                        "grep",
-                        "tail",
-                        "cat",
-                        "more-less",
-                        "sed"
+                        'common',
+                        'cp',
+                        'mv',
+                        'tar',
+                        'find',
+                        'grep',
+                        'tail',
+                        'cat',
+                        'more-less',
+                        'sed'
                     ].map((i) => `file/${i}`),
                 },
                 {
-                    title: "Common",
+                    title: 'Common',
                     collapsable: true,
                     sidebarDepth: 3,
                     children: [
-                        "common"
+                        'common'
                     ].map((i) => `common/${i}`),
                 },
                 {
-                    title: "System",
+                    title: 'System',
                     collapsable: false,
                     children: [
-                        "network",
-                        "disk",
-                        "status"
+                        'network',
+                        'disk',
+                        'status'
                     ].map((i) => `system/${i}`),
                 },
                 {
-                    title: "Vim",
+                    title: 'Vim',
                     collapsable: false,
                     children: [
-                        "common",
-                        "edit",
-                        "move",
-                        "search",
-                        "annotation"
+                        'common',
+                        'edit',
+                        'move',
+                        'search',
+                        'annotation'
                     ].map((i) => `vim/${i}`),
                 }
             ],

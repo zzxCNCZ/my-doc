@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "vuepress dev .",
+    "dev": "vuepress dev . --temp .temp",
     "test": "jest",
     "build": "vuepress build ."
   },
