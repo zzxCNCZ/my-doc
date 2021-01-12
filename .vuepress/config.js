@@ -46,6 +46,16 @@ module.exports = {
                 ]
             },
             { text: 'Java', link: '/java/' },
+            { text: 'JavaScript', link: '/javascript/',
+                items: [
+                    { text: '基础',
+                        items: [
+                            { text: '基础', link: '/javascript/common/' }
+                        ]
+                    }
+                ]
+            },
+            { text: 'CSS', link: '/css/' },
             { text: 'Algorithm', link: '/algorithm/' },
             {
                 text: 'Linux',
@@ -126,6 +136,17 @@ module.exports = {
                     ].map((i) => `springboot/${i}`),
                 }
             ],
+            '/javascript/': [
+                {
+                    title: '基础',
+                    collapsable: true,
+                    children: [
+                        'common',
+                        'date',
+                        'array'
+                    ].map((i) => `common/${i}`),
+                }
+             ],
             '/linux/': [
                 {
                     title: 'File',
