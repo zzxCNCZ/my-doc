@@ -56,7 +56,16 @@ module.exports = {
                     }
                 ]
             },
-            { text: 'CSS', link: '/css/' },
+            { text: 'CSS', link: '/css/',
+                items: [
+                    { text: '常用布局',
+                        items: [
+                            { text: 'flex', link: '/css/flex' },
+                            { text: 'grid', link: '/css/grid' }
+                        ]
+                    }
+                ]
+            },
             { text: 'Algorithm', link: '/algorithm/' },
             {
                 text: 'Linux',
@@ -155,6 +164,16 @@ module.exports = {
                     ].map((i) => `es6/${i}`),
                 }
              ],
+            '/css/': [
+                {
+                    title: 'css',
+                    collapsable: false,
+                    children: [
+                        'flex',
+                        'grid'
+                    ],
+                }
+            ],
             '/linux/': [
                 {
                     title: 'File',

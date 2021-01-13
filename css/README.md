@@ -5,9 +5,9 @@ tags:
   - css
 ---
 
-# JavaScript
+# Css
 
 ::: tip 包含以下模块
-1. [common](/javascript/common/common.md)
-2. [ES6](/linux/common/)
+1. [flex布局](./flex.md)
+2. [grid布局](./grid.md)
 :::
