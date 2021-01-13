@@ -50,7 +50,8 @@ module.exports = {
                 items: [
                     { text: '基础',
                         items: [
-                            { text: '基础', link: '/javascript/common/' }
+                            { text: '常用语法', link: '/javascript/common/' },
+                            { text: 'ES6', link: '/javascript/es6/' }
                         ]
                     }
                 ]
@@ -139,12 +140,19 @@ module.exports = {
             '/javascript/': [
                 {
                     title: '基础',
-                    collapsable: true,
+                    collapsable: false,
                     children: [
                         'common',
                         'date',
                         'array'
                     ].map((i) => `common/${i}`),
+                },
+                {
+                    title: 'ES6(ECMAScript 2015)',
+                    collapsable: false,
+                    children: [
+                        'promise'
+                    ].map((i) => `es6/${i}`),
                 }
              ],
             '/linux/': [
@@ -166,7 +174,7 @@ module.exports = {
                 },
                 {
                     title: 'Common',
-                    collapsable: true,
+                    collapsable: false,
                     sidebarDepth: 3,
                     children: [
                         'common'
