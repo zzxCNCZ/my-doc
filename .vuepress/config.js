@@ -63,6 +63,11 @@ module.exports = {
                             { text: 'flex', link: '/css/flex' },
                             { text: 'grid', link: '/css/grid' }
                         ]
+                    },
+                    { text: '常用语法',
+                        items: [
+                            { text: 'common', link: '/css/common' }
+                        ]
                     }
                 ]
             },
@@ -166,12 +171,19 @@ module.exports = {
              ],
             '/css/': [
                 {
-                    title: 'css',
+                    title: '布局',
                     collapsable: false,
                     children: [
                         'flex',
                         'grid'
                     ],
+                },
+                {
+                    title: '常用语法',
+                    collapsable: false,
+                    children: [
+                        'common'
+                    ]
                 }
             ],
             '/linux/': [
