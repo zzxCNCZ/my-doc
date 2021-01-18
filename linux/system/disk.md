@@ -1,7 +1,7 @@
 # 硬盘
 > 硬盘分区操作
 
-### 查看状态 fdisk df
+## 查看状态 fdisk df
 ```shell script
 # 查看所有硬盘信息
 sudo fdisk -l
@@ -12,9 +12,12 @@ df -Th 只能看到挂载的磁盘信息(-T显示Type)
 du -lh --max-depth=1 
 # 检查磁盘坏道
 badblocks -v /dev/sda > badsectors.txt
-   
+
+# 查看系统检测的硬盘 命令：
+lsblk
+ 
 ```
-### 挂载 mount
+## 挂载 mount
 ```shell script
 # 格式化为ext4分区
 mkfs.ext4 /dev/sdd1
