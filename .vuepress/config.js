@@ -38,6 +38,11 @@ module.exports = {
                             { text: 'Git', link: '/tools/git/' }
                         ]
                     },
+                    { text: 'K8s',
+                        items: [
+                            { text: 'K8s', link: '/tools/K8s/' }
+                        ]
+                    },
                     { text: '其他',
                         items: [
                             { text: 'Nginx', link: '/tools/nginx/' }
@@ -140,6 +145,13 @@ module.exports = {
                         'setting',
                         'problem'
                     ].map((i) => `nginx/${i}`),
+                },
+                {
+                    title: 'K8s',
+                    collapsable: false,
+                    children: [
+                        'basis'
+                    ].map((i) => `basis/${i}`),
                 },
             ],
             '/java/': [
