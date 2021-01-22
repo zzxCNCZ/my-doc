@@ -71,7 +71,8 @@ module.exports = {
                     },
                     { text: '常用语法',
                         items: [
-                            { text: 'common', link: '/css/common' }
+                            { text: 'common', link: '/css/common' },
+                            { text: 'animation', link: '/css/animation' }
                         ]
                     }
                 ]
@@ -151,7 +152,7 @@ module.exports = {
                     collapsable: false,
                     children: [
                         'basis'
-                    ].map((i) => `basis/${i}`),
+                    ].map((i) => `K8s/${i}`),
                 },
             ],
             '/java/': [
@@ -194,14 +195,15 @@ module.exports = {
                     title: '常用语法',
                     collapsable: false,
                     children: [
-                        'common'
+                        'common',
+                        'animation'
                     ]
                 }
             ],
             '/linux/': [
                 {
                     title: 'File',
-                    collapsable: true,
+                    collapsable: false,
                     children: [
                         'common',
                         'cp',
