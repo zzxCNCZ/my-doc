@@ -1,7 +1,7 @@
-# 可选链(option-chain)
+# 可选链(optional-chain)
 > 可选链操作符是一个新的js api，它允许读取一个被连接对象的深层次的属性的值而无需明确校验链条上每一个引用的有效性。目前处于Stage 3提案阶段，暂时不可以直接使用，可以通过babel编译器使用。
 
-## option-chain语法
+## optional-chain语法
 ```javascript
 const obj = {
   foo: {
@@ -22,7 +22,7 @@ let baz = obj?.foo?.bar?.baz; // 结果：42
 let baz = obj?.foo?.bar?.bbs ?? 100  //  结果: 100
 ```
 
-## option-chain使用
+## optional-chain使用
 > 由于目前可选链仅在提案阶段，浏览器暂时还不支持，因此需要使用babel进行转化，下面，我就来介绍一下在Vue项目中适合在js和template中使用可选链提升我们编码的可读性与效率。
 - npm 安装
 ```bash
