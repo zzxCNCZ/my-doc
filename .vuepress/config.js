@@ -144,6 +144,7 @@ module.exports = {
                     children: [
                         'common',
                         'setting',
+                        'proxy_pass',
                         'problem'
                     ].map((i) => `nginx/${i}`),
                 },

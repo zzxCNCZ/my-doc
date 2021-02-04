@@ -1,6 +1,6 @@
 # 常用配置
 
-#### Gzip配置
+## Gzip配置
 ```shell script
 gzip  on;
 gzip_min_length 1k;
@@ -11,7 +11,7 @@ gzip_vary on;
 gzip_disable "MSIE [1-6]\.";
 ```
 
-#### ssl证书配置
+## ssl证书配置
 ```shell script
 ## 将证书放置于nginx安装目录下
 server {
@@ -31,7 +31,7 @@ server {
  }
 ```
 
-#### 使用auth_basic 授权登录访问地址
+## 使用auth_basic 授权登录访问地址
 1. 生成密码
 ```shell script
 # 生成username password
@@ -51,7 +51,7 @@ auth_basic "Please input password";
 auth_basic_user_file /etc/nginx/passwords;
 ```
 
-#### example: 配置netdata密码登录
+## example: 配置netdata密码登录
 ```shell script
 upstream netdata {
     server 127.0.0.1:19999;
@@ -97,7 +97,7 @@ server {
 }
 ```
 
-#### 将http代理为https
+## 将http代理为https
 > Proxy HTTPS requests to a HTTP backend with NGINX [reference](https://serverfault.com/questions/145383/proxy-https-requests-to-a-http-backend-with-nginx/537278#537278)
 ```shell script
 server {

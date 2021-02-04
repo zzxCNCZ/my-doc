@@ -7,5 +7,6 @@
 ::: tip 包含以下模块
 1. [常用指令](/tools/nginx/common.md)
 2. [常用配置](/tools/nginx/setting.md)
-3. [常见问题](/tools/nginx/problem.md)
+3. [代理设置](/tools/nginx/proxy_pass.md)
+4. [常见问题](/tools/nginx/problem.md)
 :::
