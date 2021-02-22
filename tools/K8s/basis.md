@@ -46,3 +46,15 @@ int pid = clone(main_function, stack_size, CLONE_NEWPID | SIGCHLD, NULL);
 和 User 这些 Namespace。
 比如，Mount Namespace，用于让被隔离进程只看到当前 Namespace 里的挂载点信息；Network Namespace，
 用于让被隔离进程看到当前 Namespace 里的网络设备和配置。
+
+
+## Cgroups 技术
+namespace解决可见性问题，cgroup解决资源隔离问题
+Linux Cgroups 的全称是 Linux Control Group。它最主要的作用，就是限制一个进程组能够使用的资源上限，包括 CPU、内存、磁盘、网络带宽等等。
+在 Linux 中，Cgroups 给用户暴露出来的操作接口是文件系统，即它以文件和目录的方式组织在操作系统的 /sys/fs/cgroup 路径下。
+
+
+## Docker Engine 在不同平台的实现
+Linux 原生支持容器，Docker Engine 构建在 Linux 内核提供的容器技术上。需要注意的是此容器技术有别于虚拟技术，容器运行时有如 Linux 上的一个进程，执行效率接近于原生应用。
+Docker for Windows 在 Windows 10 利用其自带的 Linux 子系统来支持原生的 Linux 容器。Windows Subsystem for Linux 2 (WSL2) 一般 2 秒启动，之前 Docker 使用虚拟机的情况下 10 秒启动。
+Docker for Mac 在 macOS 下以轻量级虚拟机（HyperKit）的形式运行一台优化过的 Linux 虚拟机，作为 Docker Engine 的虚拟机。
