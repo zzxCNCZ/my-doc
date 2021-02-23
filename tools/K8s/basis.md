@@ -55,6 +55,11 @@ Linux Cgroups 的全称是 Linux Control Group。它最主要的作用，就是�
 
 
 ## Docker Engine 在不同平台的实现
-Linux 原生支持容器，Docker Engine 构建在 Linux 内核提供的容器技术上。需要注意的是此容器技术有别于虚拟技术，容器运行时有如 Linux 上的一个进程，执行效率接近于原生应用。
-Docker for Windows 在 Windows 10 利用其自带的 Linux 子系统来支持原生的 Linux 容器。Windows Subsystem for Linux 2 (WSL2) 一般 2 秒启动，之前 Docker 使用虚拟机的情况下 10 秒启动。
-Docker for Mac 在 macOS 下以轻量级虚拟机（HyperKit）的形式运行一台优化过的 Linux 虚拟机，作为 Docker Engine 的虚拟机。
+Linux 原生支持容器，Docker Engine 构建在 Linux 内核提供的容器技术上。需要注意的是此容器技术有别于虚拟技术，容器运行时有如 Linux 上的一个进程，执行效率接近于原生应用。<br>
+Docker for Windows 在 Windows 10 利用其自带的 Linux 子系统来支持原生的 Linux 容器。Windows Subsystem for Linux 2 (WSL2) 一般 2 秒启动，之前 Docker 使用虚拟机的情况下 10 秒启动。<br>
+Docker for Mac 在 macOS 下以轻量级虚拟机（HyperKit）的形式运行一台优化过的 Linux 虚拟机，作为 Docker Engine 的虚拟机。<br>
+
+## 宿主机启动一个docker容器实际进行的操作为
+- 启用 Linux Namespace 配置；
+- 设置指定的 Cgroups 参数；
+- 切换进程的根目录（Change Root）。
