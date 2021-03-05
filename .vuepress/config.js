@@ -136,7 +136,7 @@ module.exports = {
                     children: [
                         'usage',
                         'common'
-                    ].map((i) => `docker/-compose${i}`),
+                    ].map((i) => `docker-compose/${i}`),
                 },
                 {
                     title: 'Git',
