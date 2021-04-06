@@ -117,6 +117,25 @@ sudo systemctl restart docker
 
 ```
 
+## snap版本docker镜像加速
+```bash
+$ vim /var/snap/docker/current/config/daemon.json
+# 添加
+"registry-mirrors": ["https://hub-mirror.c.163.com"]
+
+$ cat /var/snap/docker/current/config/daemon.json
+{
+    "log-level":        "error",
+    "storage-driver":   "overlay2",
+    "registry-mirrors": ["https://hub-mirror.c.163.com"]
+}
+
+# 重启docker
+snap restart docker
+
+# 通过docker info 产看是否生效
+```
+
 ## docker容器目录迁移
 > 迁移前先关闭docker  service docker stop, 使用rsync 迁移 /var/lib/docker(docker默认目录)目录
 ```shell script

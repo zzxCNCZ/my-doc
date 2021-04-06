@@ -70,5 +70,14 @@ x -> 1
 timedatectl set-timezone Asia/Shanghai
 
 # 设置root password
+# 用su 登录root
 sudo passwd root
+
+# 安装openssl
+# openssl 默认开启了 公钥认证，root用户可以用公钥登录，不推荐直接开启root远程登录
+sudo apt install openssl
+sudo apt install libssl-dev
+
+# sshd service 配置文件目录
+/etc/ssh/ssh_config
 ```
