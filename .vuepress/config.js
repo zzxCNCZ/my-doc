@@ -51,6 +51,15 @@ module.exports = {
                 ]
             },
             { text: 'Java', link: '/java/' },
+            { text: 'Sql', link: '/sql/',
+                items: [
+                    { text: 'mysql',
+                        items: [
+                            { text: '常用', link: '/sql/mysql/common/' },
+                        ]
+                    }
+                ]
+            },
             { text: 'JavaScript', link: '/javascript/',
                 items: [
                     { text: '基础',
@@ -171,6 +180,15 @@ module.exports = {
                     children: [
                         'maven'
                     ].map((i) => `springboot/${i}`),
+                }
+            ],
+            '/sql/': [
+                {
+                    title: 'Mysql',
+                    collapsable: false,
+                    children: [
+                        'common'
+                    ].map((i) => `mysql/${i}`),
                 }
             ],
             '/javascript/': [

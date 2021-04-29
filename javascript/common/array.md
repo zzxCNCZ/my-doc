@@ -53,7 +53,7 @@ console.log(r)
 ```
 
 ## 删除元素
-> 该方法会改变原始数组
+> splice该方法会改变原始数组
 > arrayObject.splice(index,howmany,item1,.....,itemX)
 
 | 参数    | 描述           |
@@ -75,7 +75,12 @@ const array = ["one", "two", "four"];
 array.splice(2, 0, "three");
 // 现在数组是这个样子 ["one", "two", "three", "four"]
 ```
+> slice 该方法并不会修改数组，而是返回一个子数组
+```javascript
 
+stringObject.slice(start,end)
+// return 一个新的字符串。包括字符串 stringObject 从 start 开始（包括 start）到 end 结束（不包括 end）为止的所有字符。
+```
 ## 其他
 
 ### 模拟队列，数组操作
