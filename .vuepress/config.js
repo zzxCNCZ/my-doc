@@ -55,6 +55,7 @@ module.exports = {
                 items: [
                     { text: 'mysql',
                         items: [
+                            { text: '安装及配置', link: '/sql/mysql/install-setting/' },
                             { text: '常用', link: '/sql/mysql/common/' },
                         ]
                     }
@@ -187,7 +188,8 @@ module.exports = {
                     title: 'Mysql',
                     collapsable: false,
                     children: [
-                        'common'
+                        'install-setting',
+                        'common',
                     ].map((i) => `mysql/${i}`),
                 }
             ],
