@@ -67,7 +67,7 @@ docker volume ls
 # 拷贝
 docker cp  本地文件  container-id:path 复制文件
 
-exp:docker cp sbmysql.war 1dde5b08d489:/usr/local/tomcat/webapps
+e.g.,docker cp sbmysql.war 1dde5b08d489:/usr/local/tomcat/webapps
 
 ```
 ## docker 其他命令

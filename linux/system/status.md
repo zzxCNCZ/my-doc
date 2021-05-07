@@ -14,6 +14,22 @@ lsusb -tv              # 列出所有USB设备
 lsmod                  # 列出加载的内核模块
 env                    # 查看环境变量
 
+# 总核数 = 物理CPU个数 X 每颗物理CPU的核数 
+# 总逻辑CPU数 = 物理CPU个数 X 每颗物理CPU的核数 X 超线程数
+
+# 查看物理CPU个数
+cat /proc/cpuinfo| grep "physical id"| sort| uniq| wc -l
+
+# 查看每个物理CPU中core的个数(即核数)
+cat /proc/cpuinfo| grep "cpu cores"| uniq
+
+# 查看逻辑CPU的个数
+cat /proc/cpuinfo| grep "processor"| wc -l
+
+
+# 查看内存信息
+cat /proc/meminfo
+
 ## 资源
 free -m                # 查看内存使用量和交换区使用量
 df -h                  # 查看各分区使用情况

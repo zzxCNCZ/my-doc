@@ -206,7 +206,7 @@ current_val     INT         NOT NULL, -- 当前值
 increment_val   INT         NOT NULL    DEFAULT 1, -- 步长(跨度)       
 PRIMARY KEY (seq_name)   ); 
 ```
-2. 新增一个序列 exp: 例如建立一个序列给 te_drive表
+2. 新增一个序列 e.g., 例如建立一个序列给 te_drive表
 ```sql
 INSERT INTO sequence VALUES ('seq_drive', '0', '1');
 ```
@@ -248,7 +248,7 @@ end;
 ```sql
 select nextval('seq_drive');
 ```
-7. 使用触发器，当表插入数据时，使用序列。exp: 新建te_drive表
+7. 使用触发器，当表插入数据时，使用序列。e.g., 新建te_drive表
 ```sql
 
 DROP TABLE IF EXISTS `te_drive`;
