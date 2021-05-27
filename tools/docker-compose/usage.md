@@ -26,6 +26,10 @@ docker-compose build --pull
 
 docker-compose up -d
 
+# compose以守护进程模式运行加-d选项,并重新 构建service
+
+docker-compose up -d --build servicename
+
 # 查看有哪些服务，使用docker-compose ps命令，非常类似于 docker 的ps命令
 docker-compose ps
 

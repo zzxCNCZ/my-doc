@@ -207,7 +207,7 @@ module.exports = {
                     title: 'ES6(ECMAScript 2015)',
                     collapsable: false,
                     children: [
-                        'promise',
+                        'pro',
                         'optional-chain'
                     ].map((i) => `es6/${i}`),
                 }
