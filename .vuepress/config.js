@@ -87,7 +87,14 @@ module.exports = {
                     }
                 ]
             },
-            { text: 'Algorithm', link: '/algorithm/' },
+            { text: 'SP', link: '/sp/',
+                items: [
+                    { text: 'Python',
+                        items: [
+                            { text: '基础', link: '/sp/python/basic' }
+                        ]
+                    }
+                ] },
             {
                 text: 'Linux',
                 ariaLabel: 'Linux Menu',
@@ -274,6 +281,15 @@ module.exports = {
                         'search',
                         'annotation'
                     ].map((i) => `vim/${i}`),
+                }
+            ],
+            '/sp/python/': [
+                {
+                    title: 'Python',
+                    collapsable: false,
+                    children: [
+                        'basic'
+                    ],
                 }
             ],
         },

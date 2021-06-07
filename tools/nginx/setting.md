@@ -108,12 +108,12 @@ server {
 }
 
 server {
-    listen xxx.xxx.xxx.xxx:443;
+    listen 443 ssl;
     server_name www.example.net;
 
     root   /vhosts/www.example.net;
-
-    ssl                  on;
+    
+    # ssl                  on;
     ssl_certificate      /etc/pki/nginx/www.example.net.crt;
     ssl_certificate_key  /etc/pki/nginx/www.example.net.key;
 
