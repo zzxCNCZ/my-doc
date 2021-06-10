@@ -13,6 +13,8 @@ module.exports = {
     themeConfig: {
         logo: '/banksy.png',
         sidebarDepth: 2,
+        search: true,
+        searchMaxSuggestions: 10,
         lastUpdated: 'Last Updated',
         nav: [
             { text: 'Home', link: '/' },

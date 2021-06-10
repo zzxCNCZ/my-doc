@@ -1,6 +1,6 @@
-# 常用命令
+# git常用命令
 > git常用指令,常用操作
-#### 初始化git仓库流程
+## git初始化仓库
 ```shell script
 # git初始化 使当前目录变成可以管理的版本仓库（git repository) 会产生.git文件 
 git init 
@@ -14,7 +14,7 @@ git remote add origin git@github.com:banksy/learngit.git
 git push origin master
 ```
 
-#### 其他常用指令
+## git其他指令
 ```shell script
 # 查看repository的状态
 git status 
@@ -32,7 +32,7 @@ git reset --hard <commit ID>
 git reflog
 ```
 
-#### 删除已提交目录
+## git删除已提交目录
 > 例如当误提交了.idea文件夹到远程仓库，需要删除远程仓库.idea文件夹且不删除本地
 ```shell script
 # 编辑 .gitignore 文件，添加.idea文件夹
@@ -47,15 +47,26 @@ git remote add grandlynn ssh://zhuang.zexin@58.211.187.150:45672/web/edu-web.git
 git push -u grandlynn master
 ```
 
-#### 添加两个远程仓库
+## git远程仓库
 ```shell script
+# 设置两个远程仓库
 # 添加别名为 grandlynn
 git remote add grandlynn ssh://zhuang.zexin@101.101.101.1/web/edu-web.git
 # 将master 分支提交到 grandlynn仓库
 git push -u grandlynn master
+
+# 查看远程仓库
+git remote
+# 添加远程仓库
+git remote add origin http://host/add.git
+# 修改远程仓库
+git remote set-url origin http://host/modify.git
+# 删除远程仓库
+git remote rm origin
+
 ```
 
-#### 设置代理
+## git设置代理
 ```shell script
 # http
 git config --global https.proxy http://127.0.0.1:1080

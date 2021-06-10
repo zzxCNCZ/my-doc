@@ -1,4 +1,4 @@
-# 基础入门
+# Python基础入门
 
 ## virtualenv
 > “独立”的Python运行环境
@@ -20,7 +20,7 @@ source venv/bin/activate
 deactivate
 ```
 
-## docker 部署Python
+## Python部署
 - Dockerfile
 ```dockerfile
 # 基于镜像基础

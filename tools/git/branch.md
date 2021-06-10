@@ -1,6 +1,6 @@
 # git分支使用
 
-#### 常用指令
+## git branch常用指令
 ```shell script
 # 创建分支
 git branch dev
@@ -36,7 +36,7 @@ git merge --no-ff -m "msg" <branch_name> #合并分支时禁用Fast forward模�
 :::
 
 
-#### 回滚到历史版本
+## git branch回滚到历史版本
 ```shell script
 # 全部回滚不保留修改
 git reset --hard  id

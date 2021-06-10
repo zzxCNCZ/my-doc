@@ -1,7 +1,6 @@
 # mysql安装及配置
 
-## 安装
-### 普通安装
+#### mysql普通安装
 - ubuntu下通过源安装
 ```bash
 sudo apt-get install mysql-server
@@ -54,7 +53,7 @@ sudo apt-get remove mysql-*
 dpkg -l |grep ^rc|awk '{print $2}' |sudo xargs dpkg -P
 
 ```
-### docker安装
+#### mysql docker安装
 - 编辑docker-compose.yml
 ```dockerfile
 version: '3'
@@ -82,9 +81,9 @@ services:
       #容器的配置目录挂载到host物理机目录/e/docker/mysql/data/conf
        - "./data/config/mysql:/etc/mysql/conf.d"
 ```
-## 常用配置
+## mysql 数据库创建、权限、用户配置
 
-### mysql8创建数据库及用户
+#### mysql8创建数据库及用户
 ```sql
 # 创建admin 数据库
 CREATE DATABASE `admin` DEFAULT CHARACTER SET utf8mb4  COLLATE utf8mb4_unicode_ci;
@@ -105,7 +104,7 @@ grant select,delete,update,create,drop on *.* to test@"%" identified by "123456"
 flush privileges;
 
 ```
-### 删除用户及权限操作
+#### mysql删除用户及权限操作
 ```sql
 Delete FROM user Where User='test' and Host='localhost';
 
@@ -117,7 +116,7 @@ drop user 用户名@ localhost;
 # 关闭root远程只需删除root远程账户即可；
 drop user root@'%';
 ```
-### 修改用户密码
+#### 修改用户密码
 ```
 update mysql.user set password=password('newpwd') where User="test" and Host="localhost";
 
@@ -126,13 +125,13 @@ flush privileges;
 
 ## mysql常见error code
 
-### 2059
+#### 2059
 ```sql
 ALTER  USER  'root'  IDENTIFIED  WITH  mysql_native_password  BY  'pwd'; 
 #刷新权限 
 FLUSH PRIVILEGES; 
 ```
-### 1129
+#### 1129
 ```bash
 # 查找 mysqladmin
 whereis mysqladmin
@@ -140,7 +139,7 @@ whereis mysqladmin
 # 执行命令
 mysqladmin -u root -p flush-hosts 
 ```
-### 1418
+#### 1418
 > 原因：这是我们开启了bin-log我们就必须为我们的function指定一个参数
 [reference1](https://dev.mysql.com/doc/refman/8.0/en/stored-programs-logging.html)
 [reference2](https://blog.csdn.net/lv_hang515888/article/details/78094889)
@@ -156,7 +155,7 @@ set global log_bin_trust_function_creators=1;
 4 MODIFIES SQL DATA 要修改数据 
 5 CONTAINS SQL 包含了SQL语句
 ```
-### 1205
+#### 1205
 >  锁问题 Lock wait timeout exceeded;
 ```sql
 # 查找出锁线程

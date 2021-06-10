@@ -1,7 +1,7 @@
 # docker安装及配置
 > docker 安装及镜像、加速配置、根目录配置
 
-## docker安装
+## 在线安装
 ```shell script
 wget -qO- https://get.docker.com/ | sh
 # 非root用户使用
@@ -9,7 +9,7 @@ sudo usermod -aG docker +用户名
 newgrp docker     #更新用户组
 ```
 
-## docker离线安装
+## 离线安装
 1. 下载地址, 下载对应版本
 `https://download.docker.com/linux/static/stable/x86_64/`
 2. 配置docker service
@@ -92,7 +92,7 @@ echo '卸载成功...'
 
 ```
 
-## docker镜像加速
+## 镜像加速
 ```shell script
 
 # 切换国内镜像
