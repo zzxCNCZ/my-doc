@@ -1,4 +1,4 @@
-# git分支使用
+# git branch
 
 ## git branch常用指令
 ```shell script

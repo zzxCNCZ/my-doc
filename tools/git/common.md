@@ -1,6 +1,6 @@
 # git常用命令
 > git常用指令,常用操作
-## git初始化仓库
+## git init初始化仓库
 ```shell script
 # git初始化 使当前目录变成可以管理的版本仓库（git repository) 会产生.git文件 
 git init 
@@ -24,6 +24,7 @@ git diff
 git log 
 # 简洁地显示提交日志
 git log --pretty=oneline
+git log --pretty=oneline --abbrev-commit
 # 回退到某个版本，比如这里回退到第前3个版本
 git reset --hard HEAD~<3> 
 # 回退到特定ID的版本
@@ -32,7 +33,7 @@ git reset --hard <commit ID>
 git reflog
 ```
 
-## git删除已提交目录
+## git rm删除已提交目录
 > 例如当误提交了.idea文件夹到远程仓库，需要删除远程仓库.idea文件夹且不删除本地
 ```shell script
 # 编辑 .gitignore 文件，添加.idea文件夹
@@ -47,7 +48,7 @@ git remote add grandlynn ssh://zhuang.zexin@58.211.187.150:45672/web/edu-web.git
 git push -u grandlynn master
 ```
 
-## git远程仓库
+## git remote远程仓库
 ```shell script
 # 设置两个远程仓库
 # 添加别名为 grandlynn

@@ -162,7 +162,8 @@ module.exports = {
                     collapsable: false,
                     children: [
                         'common',
-                        'branch'
+                        'branch',
+                        'tag'
                     ].map((i) => `git/${i}`),
                 },
                 {
