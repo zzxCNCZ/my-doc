@@ -198,6 +198,7 @@ module.exports = {
                     title: 'Mysql',
                     collapsable: false,
                     children: [
+                        'grammar',
                         'install-setting',
                         'common',
                     ].map((i) => `mysql/${i}`),
