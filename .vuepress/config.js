@@ -150,6 +150,13 @@ module.exports = {
                     ].map((i) => `docker/${i}`),
                 },
                 {
+                    title: 'Dockerfile',
+                    collapsable: false,
+                    children: [
+                        'command'
+                    ].map((i) => `Dockerfile/${i}`),
+                },
+                {
                     title: 'docker-compose',
                     collapsable: false,
                     children: [
