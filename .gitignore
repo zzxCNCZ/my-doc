@@ -1,6 +1,7 @@
 .DS_Store
 node_modules/
 .vuepress/dist/
+docker/dist/
 **/*.log
 
 tests/**/coverage/
