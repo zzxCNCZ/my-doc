@@ -3,10 +3,24 @@
 ### 生成 ssh 密钥
 ```shell script
 # 默认生成在/root/.ssh 文件夹下
-ssh-keygen -t rsa -C “bluedrum@qq.com”
+ssh-keygen -t rsa -C “zhuangzexin.top”
 ```
 ## 配置authorized_keys实现免密码登录
 ```shell script
+# 确认本机sshd的配置文件
+vim /etc/ssh/sshd_config
+
+# 取消注释
+PubkeyAuthentication yes
+AuthorizedKeysFile .ssh/authorized_keys
+
+# 重启sshd服务
+service sshd restart
+
+# 更改权限
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
+
 # 将所要添加的计算机的公钥添加到目标主机上实现免密码登陆（在更新博客时需要用到）， 当添加了公钥还是不能登陆，很可能是因为上级文件权限的问题，检查.ssh 文件夹、root文件夹，authorized_keys 文件权限是否异常。
 # 如果没有authorized_keys 文件可自行添加
 cat id_rsa.pub >> authorized_keys 
