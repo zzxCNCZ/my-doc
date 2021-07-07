@@ -62,3 +62,10 @@ cut -d: -f1 /etc/passwd   # 查看系统所有用户
 cut -d: -f1 /etc/group    # 查看系统所有组
 crontab -l             # 查看当前用户的计划任务
 ```
+### swap
+```bash
+# 关闭swap
+sudo swapoff -a
+# 打开 swap
+sudo swapon -a
+```

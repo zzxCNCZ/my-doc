@@ -51,14 +51,17 @@ scp -P 9022   /Users/mac/Downloads/v2ray-linux-arm.zip  admin@192.168.1.181:/tmp
 adduser linuxidc
 
 password linuxidc
-# 授权
- chmod -v u+w /etc/sudoers
+# 授权 sudo
+chmod -v u+w /etc/sudoers
  
 vim /etc/sudoers
 
 # Allow root to run any commands anywher  
 root    ALL=(ALL)       ALL  
 linuxidc  ALL=(ALL)       ALL  #这个是新增的用户
+
+#或者
+sudo adduser username sudo
 
 # 还原权限
 chmod -v u-w /etc/sudoers
