@@ -46,7 +46,14 @@ int pid = clone(main_function, stack_size, CLONE_NEWPID | SIGCHLD, NULL);
 和 User 这些 Namespace。
 比如，Mount Namespace，用于让被隔离进程只看到当前 Namespace 里的挂载点信息；Network Namespace，
 用于让被隔离进程看到当前 Namespace 里的网络设备和配置。
-
+- Linux 支持7种namespace:
+1. cgroup用于隔离cgroup根目录;
+2. IPC用于隔离系统消息队列;
+3. Network隔离网络;
+4. Mount隔离挂载点;
+5. PID隔离进程;
+6. User隔离用户和用户组;
+7. UTS隔离主机名nis域名。
 
 #### Cgroups 技术
 namespace解决可见性问题，cgroup解决资源隔离问题

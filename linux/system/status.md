@@ -62,6 +62,10 @@ cut -d: -f1 /etc/passwd   # 查看系统所有用户
 cut -d: -f1 /etc/group    # 查看系统所有组
 crontab -l             # 查看当前用户的计划任务
 ```
+### 查看系统进程树
+```bash
+pstree -g
+```
 ### swap
 ```bash
 # 关闭swap
