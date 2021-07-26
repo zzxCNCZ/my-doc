@@ -57,6 +57,7 @@ module.exports = {
                 items: [
                     { text: 'mysql',
                         items: [
+                            { text: '语法', link: '/sql/mysql/grammar/' },
                             { text: '安装及配置', link: '/sql/mysql/install-setting/' },
                             { text: '常用', link: '/sql/mysql/common/' },
                         ]

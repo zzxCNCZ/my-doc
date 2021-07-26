@@ -1,6 +1,7 @@
 # mysql安装及配置
 
-#### mysql普通安装
+## 安装
+### 普通安装
 - ubuntu下通过源安装
 ```bash
 sudo apt-get install mysql-server
@@ -53,7 +54,7 @@ sudo apt-get remove mysql-*
 dpkg -l |grep ^rc|awk '{print $2}' |sudo xargs dpkg -P
 
 ```
-#### mysql docker安装
+### docker版本安装
 - 编辑docker-compose.yml
 ```dockerfile
 version: '3'
@@ -83,7 +84,7 @@ services:
 ```
 ## mysql 数据库创建、权限、用户配置
 
-#### mysql8创建数据库及用户
+### 创建数据库及用户
 ```sql
 # 创建admin 数据库
 CREATE DATABASE `admin` DEFAULT CHARACTER SET utf8mb4  COLLATE utf8mb4_unicode_ci;
@@ -91,20 +92,40 @@ CREATE DATABASE `admin` DEFAULT CHARACTER SET utf8mb4  COLLATE utf8mb4_unicode_c
 # 创建test用户 并可以远程连接  密码为123456
 create user 'test'@'%' identified by '123456';
 
-# 授予权限  此处为授予patrol数据库的所有权限  （一般用此项即可）
+```
+### 权限配置
+```sql
+# 查看所有用户
+SELECT DISTINCT CONCAT('User: ''',user,'''@''',host,''';') AS query FROM mysql.user; 
+
+# 授予权限  此处为授予admin数据库的所有权限  （一般用此项即可）
 grant all privileges on admin.* to 'test'@'%';
 
 # 如果只想授予部分权限则
 grant select,update on admin.*   to 'test'@'%';
 
+# 可用权限包含
+SELECT, INSERT, UPDATE, DELETE, CREATE, REFERENCES, INDEX, ALTER, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, EVENT, TRIGGER, DROP
+
+
 # 授权test用户拥有所有数据库的某些权限
 grant select,delete,update,create,drop on *.* to test@"%" identified by "123456";
+
+# 查看用户所拥有的权限
+show grants for 'test'@'%';
+
+# 删除部分权限
+revoke drop on admin.* from 'test'@'%';
 
 # 刷新权限
 flush privileges;
 
+
 ```
-#### mysql删除用户及权限操作
+
+
+
+### 删除用户
 ```sql
 Delete FROM user Where User='test' and Host='localhost';
 
@@ -116,7 +137,7 @@ drop user 用户名@ localhost;
 # 关闭root远程只需删除root远程账户即可；
 drop user root@'%';
 ```
-#### 修改用户密码
+### 修改用户密码
 ```
 update mysql.user set password=password('newpwd') where User="test" and Host="localhost";
 
@@ -125,13 +146,13 @@ flush privileges;
 
 ## mysql常见error code
 
-#### 2059
+### 2059
 ```sql
 ALTER  USER  'root'  IDENTIFIED  WITH  mysql_native_password  BY  'pwd'; 
 #刷新权限 
 FLUSH PRIVILEGES; 
 ```
-#### 1129
+### 1129
 ```bash
 # 查找 mysqladmin
 whereis mysqladmin
@@ -139,7 +160,7 @@ whereis mysqladmin
 # 执行命令
 mysqladmin -u root -p flush-hosts 
 ```
-#### 1418
+### 1418
 > 原因：这是我们开启了bin-log我们就必须为我们的function指定一个参数
 [reference1](https://dev.mysql.com/doc/refman/8.0/en/stored-programs-logging.html)
 [reference2](https://blog.csdn.net/lv_hang515888/article/details/78094889)

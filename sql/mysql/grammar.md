@@ -1,8 +1,8 @@
-# sql 语法
-#### sql join
+# 语法
+##  join
 ![image.png](https://chevereto.zhuangzexin.top/images/2021/06/17/image.png)
 
-#### 分页语法
+## 分页语法
 - 下一页
 ```
 SELECT * FROM foo WHERE id> 4 ORDER BY id LIMIT 1;
@@ -11,12 +11,12 @@ SELECT * FROM foo WHERE id> 4 ORDER BY id LIMIT 1;
 ```
 SELECT * FROM foo WHERE id <4 ORDER BY id DESC LIMIT 1;
 ```
-#### 时间语法
+## 时间语法
 - 时间格式化
 ```
 date_format(time, '%Y-%m-%d %H:%i:%s')
 ```
-#### 时间比较
+## 时间比较
 -  时间字符串转时间
 ```
 Date(dateStr)
@@ -25,7 +25,7 @@ Date(dateStr)
 ```
 str_to_date(date,'%Y-%m-%d')
 ```
-#### in和exists
+## in和exists
 - in 
 注意，in所对应的select语句返回的结果一定是一列！可以为多行。
 ```
