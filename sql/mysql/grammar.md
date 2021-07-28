@@ -4,31 +4,42 @@
 
 ## 分页语法
 - 下一页
-```
+```sql
 SELECT * FROM foo WHERE id> 4 ORDER BY id LIMIT 1;
 ```
 - 上一页
-```
+```sql
 SELECT * FROM foo WHERE id <4 ORDER BY id DESC LIMIT 1;
 ```
+- 第一页的前10条记录
+```sql
+SELECT * FROM foo WHERE id> 4 ORDER BY id LIMIT 0, 10;
+```
+
+- 第二页的前10条记录
+```sql
+SELECT * FROM foo WHERE id> 4 ORDER BY id LIMIT 10, 10;
+```
+
+
 ## 时间语法
 - 时间格式化
-```
+```sql
 date_format(time, '%Y-%m-%d %H:%i:%s')
 ```
 ## 时间比较
 -  时间字符串转时间
-```
+```sql
 Date(dateStr)
 ```
 -  时间转字符串
-```
+```sql
 str_to_date(date,'%Y-%m-%d')
 ```
 ## in和exists
 - in 
 注意，in所对应的select语句返回的结果一定是一列！可以为多行。
-```
+```sql
 select * from table1 
 where id [not] in (select id from table2 );
 
@@ -37,7 +48,7 @@ where id [not] in (select id from table2 );
 对外表用loop逐条查询，每次查询都会查看exists的条件语句。
 当 exists里的条件语句能够返回记录行时(无论记录行是多少，只要能返回)，条件就为真 , 返回当前loop到的这条记录。反之如果exists里的条件语句不能返回记录行，条件为假，则当前loop到的这条记录被丢弃。
 exists的条件就像一个boolean条件，当能返回结果集则为1，不能返回结果集则为 0。
-```
+```sql
 select * from table1 
 where [not] EXISTS (select id from table2 where id = table1.id )
 ```
