@@ -98,6 +98,29 @@ server {
 ```
 
 ## 将http代理为https
+- 方式1:
+转发所有http至https
+```conf
+server {
+    listen 80 default_server;
+
+    server_name _;
+
+    return 301 https://$host$request_uri;
+}
+
+```
+转发特定域名http至https
+```conf
+server {
+    listen 80;
+
+    server_name foo.com;
+    return 301 https://foo.com$request_uri;
+}
+```
+
+- 方式2(old):
 > Proxy HTTPS requests to a HTTP backend with NGINX [reference](https://serverfault.com/questions/145383/proxy-https-requests-to-a-http-backend-with-nginx/537278#537278)
 ```shell script
 server {
