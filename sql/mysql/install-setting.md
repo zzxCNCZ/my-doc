@@ -213,3 +213,18 @@ max_connections = 1024
 
 --max_connections=1024
 ```
+
+
+### 1055
+- ONLY_FUll_GROUP_BY 问题 :
+ONLY_FUll_GROUP_BY的意思是：对于GROUP BY聚合操作，如果在SELECT中的列，没有在GROUP BY中出现，那么这个SQL是不合法的，因为列不在GROUP 
+BY语句中，也就是说查出来的列必须是GROUP BY之后的字段，或者这个字段出现在聚合函数里面。
+- 解决办法:
+1. 通过mysql的any_value()函数
+
+2. 修改mysql配置
+   ```sql
+   SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
+   ** your query **
+   ```
+
