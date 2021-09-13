@@ -271,7 +271,10 @@ module.exports = {
                     collapsable: false,
                     sidebarDepth: 3,
                     children: [
-                        'common'
+                        'common',
+                        'nohup',
+                        'process',
+                        'task'
                     ].map((i) => `common/${i}`),
                 },
                 {
