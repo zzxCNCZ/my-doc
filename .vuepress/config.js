@@ -264,7 +264,8 @@ module.exports = {
                         'tail',
                         'cat',
                         'more-less',
-                        'sed'
+                        'sed',
+                        'tree'
                     ].map((i) => `file/${i}`),
                 },
                 {
@@ -275,7 +276,8 @@ module.exports = {
                         'common',
                         'nohup',
                         'process',
-                        'task'
+                        'task',
+                        'swap'
                     ].map((i) => `common/${i}`),
                 },
                 {

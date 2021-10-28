@@ -1,4 +1,4 @@
-# linux进程操作
+# process
 > 常用进程操作
 ### 查看进程状态 ps
 ```shell script

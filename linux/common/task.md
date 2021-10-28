@@ -1,4 +1,4 @@
-# linux任务切换
+# job
 > 前后台任务切换
 ### job
 ```shell script
