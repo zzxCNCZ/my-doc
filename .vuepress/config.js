@@ -47,7 +47,8 @@ module.exports = {
                     },
                     { text: '其他',
                         items: [
-                            { text: 'Nginx', link: '/tools/nginx/' }
+                            { text: 'Nginx', link: '/tools/nginx/' },
+                            { text: 'Wireguard', link: '/tools/wireguard/wireguard' }
                         ]
                     }
                 ]
@@ -69,7 +70,8 @@ module.exports = {
                     { text: '基础',
                         items: [
                             { text: '常用语法', link: '/javascript/common/' },
-                            { text: 'ES6', link: '/javascript/es6/' }
+                            { text: 'ES6', link: '/javascript/es6/' },
+                            { text: 'nodejs', link: '/javascript/nodejs/nodejs' }
                         ]
                     }
                 ]
@@ -229,6 +231,15 @@ module.exports = {
                         'pro',
                         'optional-chain'
                     ].map((i) => `es6/${i}`),
+                },
+                {
+                    title: 'nodejs&npm&yarn',
+                    collapsable: false,
+                    children: [
+                        'nodejs',
+                        'npm',
+                        'yarn'
+                    ].map((i) => `nodejs/${i}`),
                 }
              ],
             '/css/': [
