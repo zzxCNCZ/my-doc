@@ -1,10 +1,30 @@
 # docker基本命令
 > docker基本命令
 ## docker容器常用命令
-```bash
 # 查看容器运行  -a查看所有容器
 docker ps 
+```bash
+# 查看指定显示的模板
+docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Ports}}"
 
+docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Ports}}\t{{.Status}}"
+
+# 可用占位符
+.ID	容器ID
+.Image	镜像ID
+.Command	执行的命令
+.CreatedAt	容器创建时间
+.RunningFor	运行时长
+.Ports	暴露的端口
+.Status	容器状态
+.Names	容器名称
+.Label	分配给容器的所有标签
+.Mounts	容器挂载的卷
+.Networks	容器所用的网络名称
+
+# 显示完整信息
+docker ps -a --no-trunc
+```
 # 停止容器
 docker stop 
 
