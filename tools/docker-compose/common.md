@@ -25,6 +25,12 @@ logging:
 environment:
       JAVA_OPTS: "-Xms256m -Xmx1024m  -XX:MaxNewSize=256m"
 ```
+## 设置时区
+```bash
+environment:
+  - TZ=Asia/Shanghai
+
+```
 
 ## 设置host 并使用环境变量
 ```shell
