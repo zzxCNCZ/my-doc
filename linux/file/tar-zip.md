@@ -10,6 +10,8 @@ tar czvf test.tar.gz  .[!.]*
 
 # 压缩文件夹下所有文件(注意最后的 . )
 tar zcvf /test/data.tar.gz -C /some/files .
+# 压缩/home/zzx  下data 文件夹 e.g.: 
+tar zxcf data.tar.gz -C data/ .
 # 解压至指定目录
 tar zxvf FileName.tar -C /tmp 
 # 解压到当前目录下的 cloud 文件夹
