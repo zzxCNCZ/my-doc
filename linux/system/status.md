@@ -3,7 +3,7 @@
 
 ```shell script
 ## 系统信息
-cat /etc/os-release    # centos查看系统信息
+cat /etc/os-release    # 查看系统信息
 uname -r               # 查看内核信息
 uname -a               # 查看内核/操作系统/CPU信息
 lsb_release -a         # 查看操作系统版本 (适用于所有的linux，包括Redhat、SuSE、Debian等发行版，但是在debian下要安装lsb)   
@@ -62,6 +62,17 @@ cut -d: -f1 /etc/passwd   # 查看系统所有用户
 cut -d: -f1 /etc/group    # 查看系统所有组
 crontab -l             # 查看当前用户的计划任务
 ```
+
+### 系统测试
+```bash
+wget -qO- bench.sh | bash
+
+# 或者
+
+curl -Lso- bench.sh | bash
+
+```
+
 ### 查看系统进程树
 ```bash
 pstree -g
