@@ -1,7 +1,6 @@
 # docker基本命令
 > docker基本命令
-## docker容器常用命令
-# 查看容器运行  -a查看所有容器
+## 查看运行状态
 docker ps 
 ```bash
 # 查看指定显示的模板
@@ -24,31 +23,29 @@ docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Ports}}\t{{.Status}}"
 
 # 显示完整信息
 docker ps -a --no-trunc
-```
-# 停止容器
-docker stop 
 
-# 启动容器
-docker start 
-
-# 重启容器
-docker restart 
-
-# 查看容器运行日志
-docker logs +容器id  
-
-# 进入docker容器内部  并运行bash
-docker exec -it  容器id bash   
-
-# 退出容器  
-ctrl+D
-
-# 容器自启，使用--restart参数来设置
---restart=always   
 
 #  查看docker容器信息
 docer inspect containerId
 ```
+## 容器启动停止
+```bash
+
+docker stop 
+docker start 
+
+docker restart 
+
+# 查看容器运行日志
+docker logs +容器id 
+
+# 进入docker容器内部  并运行bash
+docker exec -it  容器id bash  
+
+# 退出容器  
+ctrl+D
+```
+
 
 ## docker镜像常用命令
 ```shell script
@@ -64,6 +61,9 @@ docker images
 
 # 删除镜像 -f 强制删除
 docker image rm 
+
+# 查看镜像层记录
+docker history imagename
 
 ```
 ## docker 文件操作命令
