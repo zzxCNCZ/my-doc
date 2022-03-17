@@ -287,8 +287,7 @@ module.exports = {
                         'common',
                         'nohup',
                         'process',
-                        'task',
-                        'swap'
+                        'task'
                     ].map((i) => `common/${i}`),
                 },
                 {
@@ -297,7 +296,8 @@ module.exports = {
                     children: [
                         'network',
                         'disk',
-                        'status'
+                        'status',
+                        'swap'
                     ].map((i) => `system/${i}`),
                 },
                 {
