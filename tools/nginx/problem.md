@@ -15,3 +15,8 @@ events {
     worker_connections 20000;
 }
 ```
+
+#### 访问403问题
+> nginx 的所有者为root,一般要以root启动（建议），即sudo nginx启动
+1. nginx.conf  user www-data;改成 user root;
+2. 文件权限问题。
