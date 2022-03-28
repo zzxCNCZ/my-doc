@@ -164,7 +164,8 @@ module.exports = {
                     collapsable: false,
                     children: [
                         'usage',
-                        'common'
+                        'common',
+                        'example'
                     ].map((i) => `docker-compose/${i}`),
                 },
                 {
