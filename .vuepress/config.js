@@ -222,7 +222,8 @@ module.exports = {
                     children: [
                         'common',
                         'date',
-                        'array'
+                        'array',
+                        'prototype'
                     ].map((i) => `common/${i}`),
                 },
                 {
