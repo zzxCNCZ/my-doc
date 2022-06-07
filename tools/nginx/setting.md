@@ -161,3 +161,38 @@ server {
     }
 }
 ```
+
+## 缓存控制
+> 控制特定资源走缓存
+```
+  # 静态资源方式
+  # location /test {
+        #    add_header Cache-Control 'no-cache, must-revalidate, proxy-revalidate, max-age=0';
+        #    alias /usr/share/nginx/test/;
+        #    index index.html;
+        #}
+
+        #location ~* /test/(.+\.(gif|jpg|jpeg|png|css|js|ico|eot|otf|fon|font|ttf|ttc|woff|woff2))$ {
+        #    alias /usr/share/nginx/test/$1;
+        #    expires 1M;
+        #    add_header Cache-Control "public";
+        #}
+  # proxy pass方式
+  location /test/ {
+            add_header Cache-Control 'no-cache, must-revalidate, proxy-revalidate, max-age=0';
+            proxy_pass http://127.0.0.1:10089/;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            proxy_connect_timeout 5;
+        }
+
+
+        location ~* /test/(.+\.(gif|jpg|jpeg|png|css|js|ico|eot|otf|fon|font|ttf|ttc|woff|woff2))$ {
+            proxy_pass http://127.0.0.1:10089/$1;
+            expires 1M;
+            add_header Cache-Control "public";
+        }
+
+```
