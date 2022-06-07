@@ -5,5 +5,6 @@
 2. [date](./date.md#date)
 3. [array](./array.md)
 4. [json](./json.md)
+5. [原型链](./prototype.md)
 :::
 
