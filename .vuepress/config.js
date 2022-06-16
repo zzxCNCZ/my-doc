@@ -48,6 +48,7 @@ module.exports = {
                     { text: '其他',
                         items: [
                             { text: 'Nginx', link: '/tools/nginx/' },
+                            { text: 'Kafka', link: '/tools/kafka/' },
                             { text: 'Wireguard', link: '/tools/wireguard/wireguard' }
                         ]
                     }
@@ -193,6 +194,14 @@ module.exports = {
                     children: [
                         'basis'
                     ].map((i) => `K8s/${i}`),
+                },
+                {
+                    title: 'kafka',
+                    collapsable: false,
+                    children: [
+                        'setting',
+                        'usage'
+                    ].map((i) => `kafka/${i}`),
                 },
             ],
             '/java/': [
