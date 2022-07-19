@@ -98,3 +98,8 @@ sudo apt install libssl-dev
 # sshd service 配置文件目录
 /etc/ssh/ssh_config
 ```
+
+### 查看常用的cli指令
+```bash
+history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl | head -n10
+```
