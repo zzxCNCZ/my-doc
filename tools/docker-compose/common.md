@@ -32,6 +32,17 @@ environment:
 
 ```
 
+## 启动设置 restart policy
+```bash
+restart: "no"
+
+restart: "always"
+
+restart: "on-failure"
+
+restart: "unless-stopped"
+```
+
 ## 设置host 并使用环境变量
 ```shell
 vim .env
