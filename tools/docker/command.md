@@ -151,9 +151,19 @@ docker save 的应用场景：如果我们的应用是使用 docker-compose.yml 
 ```shell script
 # 查看docker信息
 docker info
-
+# docker 状态
+docker stats
 # 清理不在运行的container images
 docker system prune -a
 # 清理不使用的docker image
 docker image prune --all
 ```
+**排查方式**
+查看 `/var/lib/docker`占用
+```shell script
+cd /var/lib/docker
+
+du -lh --max-depth=1 
+
+```
+找到对应的container或者overlay，查看占用
