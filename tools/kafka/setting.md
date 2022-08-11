@@ -56,6 +56,7 @@ services:
       - "2181:2181"
     volumes:
       - "zookeeper_data:/bitnami"
+      - /etc/localtime:/etc/localtime
     environment:
       # zookeeper开启认证
       - ZOO_ENABLE_AUTH=yes
@@ -71,6 +72,8 @@ services:
     volumes:
       # 挂载配置文件
       - ./conf/kafka_jaas.conf:/opt/bitnami/kafka/config/kafka_jaas.conf
+      # 同步容器时间
+      - /etc/localtime:/etc/localtime
     environment:
       - BITNAMI_DEBUG=true
       - KAFKA_BROKER_ID=1   
@@ -80,6 +83,8 @@ services:
       - KAFKA_CFG_SASL_MECHANISM_INTER_BROKER_PROTOCOL=PLAIN
       - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CLIENT:SASL_PLAINTEXT,EXTERNAL:SASL_PLAINTEXT
       - KAFKA_CFG_LISTENERS=CLIENT://:9092,EXTERNAL://0.0.0.0:9093
+      # external 格式为 外部ip:外部port   
+      # e.g. 映射端口为 19093:9093  外部ip 100.10.1.1  则配置为：EXTERNAL://100.10.1.1:19093
       - KAFKA_CFG_ADVERTISED_LISTENERS=CLIENT://kafka:9092,EXTERNAL://192.168.1.127:9093
       - KAFKA_CFG_INTER_BROKER_LISTENER_NAME=CLIENT
       # 配置SASL认证的用户名和密码
@@ -91,6 +96,7 @@ services:
     depends_on:
       - zookeeper
 
+# docker volume方式持久化数据
 volumes:
   zookeeper_data:
     driver: local
@@ -123,6 +129,45 @@ Client {
     password="grandlynn";
 };
 
+```
+**问题及解决方案**
+1. 当使用 本地目录的挂载方式时，需要注意文件夹UID需要设置为1001
+> As this is a non-root container, the mounted files and directories must have the proper permissions for the UID 1001
+
+[persisting-your-data](https://github.com/bitnami/bitnami-docker-kafka#persisting-your-data)
+
+方式:
+```bash
+mkdir kafka_data
+
+chown -R 1001:1001 kafka_data
+```
+
+2. 重启容器时，kafka启动失败报错: `org.apache.zookeeper.KeeperException$NodeExistsException: KeeperErrorCode = NodeExists`
+
+[github issue](https://github.com/wurstmeister/kafka-docker/issues/389)
+
+```
+The error message means that there is an ephemeral connection to the znode that has not been closed. e.g. you have restarted kafka but zookeeper has not detected the old, now stopped kafka has closed it's connection.
+
+This should not happen on the first time you create containers from the docker-compose file. Please make sure you are starting with a clean environment, i.e. docker-compose rm -svf.
+
+If you want better persistence handling across restarts, make sure you configure broker ID and logs dir etc. However, this is a more advanced topic which requires a more in-depth knowledge of how Kafka is configured - please refer to the official documentation for full information.
+ 
+```
+简单的解决方式是，待zookeeper启动后，再手动启动kafka。或者设置参数：
+```docker
+restart: always
+```
+
+### spring boot 集成 sasl认证
+```yaml
+  kafka:
+    bootstrap-servers: 192.168.1.127:9093
+    properties:
+      security.protocol: SASL_PLAINTEXT
+      sasl.mechanism: PLAIN
+      sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="alice" password="alice";
 ```
 
 ## 数据可视化
