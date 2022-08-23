@@ -144,6 +144,19 @@ update mysql.user set password=password('newpwd') where User="test" and Host="lo
 flush privileges;
 ```
 
+### 查看字符集
+```bash
+# 查看数据库字符集
+SHOW CREATE DATABASE db_name;
+
+# 查看 表字符集
+SHOW CREATE TABLE tbl_name;
+
+# 查看 column字符集
+SHOW FULL COLUMNS FROM tbl_name;
+
+```
+
 ## mysql常见error code
 
 ### 2059
