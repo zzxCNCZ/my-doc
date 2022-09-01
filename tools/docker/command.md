@@ -45,7 +45,18 @@ docker exec -it  容器id bash
 # 退出容器  
 ctrl+D
 ```
+### docker build
+```bash
+# 在Dockerfile 目录下build 镜像  . 代表以当前目录为上下文
+docker build .
 
+# 构建镜像 名称
+docker build -t   imageName   .
+
+#  指定Dockerfile 目录
+docker build -t   imageName  -f /home/Dockerfile-prod  .
+
+```
 
 ## docker镜像常用命令
 ```shell script
