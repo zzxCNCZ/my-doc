@@ -287,7 +287,8 @@ module.exports = {
                         'cat',
                         'more-less',
                         'sed',
-                        'tree'
+                        'tree',
+                        'wget'
                     ].map((i) => `file/${i}`),
                 },
                 {

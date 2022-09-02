@@ -11,4 +11,6 @@
 9. [cat](/linux/file/cat.md)
 10. [more-less](/linux/file/more-less.md)
 11. [sed](/linux/file/sed.md)
+12. [tree](/linux/file/tree.md)
+13. [wget](/linux/file/wget.md)
 :::

@@ -45,7 +45,25 @@ docker exec -it  容器id bash
 # 退出容器  
 ctrl+D
 ```
-### docker build
+
+## 容器日志
+```bash
+
+# 查看容器运行日志
+docker logs +容器id 
+
+# 查看最后 100行
+docker logs --tail 100 +容器id/name
+
+# 持续输出log 日志
+docker logs --follow +容器id/name
+
+# 持续输出log 日志   10s
+docker logs --follow --until=10s +容器id/name
+
+````
+
+## docker build
 ```bash
 # 在Dockerfile 目录下build 镜像  . 代表以当前目录为上下文
 docker build .
