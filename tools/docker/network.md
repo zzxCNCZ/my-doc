@@ -13,4 +13,19 @@ docker network connect my-net mysql
 docker network inspect my-net 
 # 容器绑定ip 参数
 --net mynetwork --ip 172.18.0.2
+
+# 清理网络
+docker network prune
+```
+
+## docker network command
+```yaml
+Commands:
+  connect     Connect a container to a network
+  create      Create a network
+  disconnect  Disconnect a container from a network
+  inspect     Display detailed information on one or more networks
+  ls          List networks
+  prune       Remove all unused networks
+  rm          Remove one or more networks
 ```

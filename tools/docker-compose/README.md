@@ -5,4 +5,5 @@
 1. [安装及使用](/tools/docker-compose/usage.md)
 2. [常用设置](/tools/docker-compose/common.md)
 3. [example](./example.md)
+4. [example](./reference.md)
 :::

@@ -55,6 +55,25 @@ extra_hosts:
   - ${HOST}
 ```
 
+## 网络设置
+默认情况下，应用程序的网络名称基于Compose的工程名称，而项目名称基于docker-compose.yml所在目录的名称。
+如需修改工程名称，可使用--project-name标识或COMPOSE_PORJECT_NAME环境变量。
+```yaml
+networks:
+  my_network:     #网络名称
+    name: my_network # v3.5及以上支持，以下版本会创建一个名为{project-name}_my_network的网络
+    driver: bridge      #桥接模式
+    attachable: true      #允许独立的网络连接到该网络上
+  persist:                #网络名称
+    external:           #使用已存在的网络
+      name: bridge2    #已创建的网络名
+
+```
+### 连接外部容器
+```yaml
+external_links:
+      - test-container #当前容器可以访问 test-container，注：这个是单向的
+```
 ## docker-compose 使用args变量并让Dockerfile使用
 ```shell
 vim .env
