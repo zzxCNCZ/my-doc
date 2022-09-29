@@ -74,6 +74,26 @@ networks:
 external_links:
       - test-container #当前容器可以访问 test-container，注：这个是单向的
 ```
+
+### 指定ip地址
+```yaml
+version: '3.7'
+services:
+   x1:
+      image: image
+      restart: always
+      tty: true
+      networks:
+         mynet1:
+            ipv4_address: 172.19.0.2
+ 
+networks:
+   mynet1:
+      ipam:
+         config:
+         - subnet: 172.19.0.0/24
+```
+
 ## docker-compose 使用args变量并让Dockerfile使用
 ```shell
 vim .env
