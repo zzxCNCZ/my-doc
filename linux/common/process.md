@@ -12,3 +12,8 @@ ps aux|grep 1936
 dmesg | grep -i -B100 'killed process'
 
 ```
+
+### 查看cpu占用
+```shell script
+top -bn 1 -i -c
+```
