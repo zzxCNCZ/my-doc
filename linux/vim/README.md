@@ -8,3 +8,6 @@
 5. [搜索](/linux/vim/search.md)
 :::
 ![vim.jpg](https://chevereto.zhuangzexin.top/images/2019/09/16/vim.jpg)
+
+### 指法练习
+![](https://chevereto.zhuangzexin.top/images/2022/12/01/20221201150220.png)
