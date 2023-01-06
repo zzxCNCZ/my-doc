@@ -43,3 +43,23 @@ blkid /dev/vdb
 UUID=b3c417e5-7122-474e-ad9a-c32ca225032b  /home/edu/data          ext4    defaults        0 2
 # 0 代表： 0不进行备份操作 2代表：检验磁盘扇区是否完整【2代表1级别检验完成之后进行检验】
 ```
+
+### 挂载虚拟磁盘
+1. 查看物理卷：pvs
+
+2. 查看卷组：vgs
+
+3. 创建 逻辑分区（创建完成后，`fdisk -l` 会出现对应的disk，此时需要格式化分区）
+```
+lvcreate -L 800G -n mylv ubuntu-vg
+```
+4. 查看逻辑分区
+```
+lvdisplay
+
+```
+5. 挂载分区
+```
+mount /dev/myvg/mylv /mnt/mylv
+```
+```
