@@ -11,3 +11,7 @@
 
 ### 指法练习
 ![](https://chevereto.zhuangzexin.top/images/2022/12/01/20221201150220.png)
+
+
+### 高阶快捷键
+![V5ZhlyA4uafmv7x](https://chevereto.zhuangzexin.top/images/2023/02/08/V5ZhlyA4uafmv7x.jpg)
