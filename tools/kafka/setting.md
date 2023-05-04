@@ -105,15 +105,15 @@ volumes:
 
 ```
 kafka_jaas.conf 配置如下：
-```
+```bash
 # sername和password是broker用于初始化连接到其他的broker 在下面配置中，admin用户为broker间的通讯，user_userName定义了所有连接到broker和broker验证的所有的客户端连接，包括其他broker的用户密码，user_userName必须配置admin用户，否则会报错
 KafkaServer {
     org.apache.kafka.common.security.plain.PlainLoginModule required
-    username="admin"
-    password="admin"
     user_admin="admin"
     user_alice="alice";
 };
+# 以上配置也可以写成下面的形式
+# username="admin" password="admin"; username="alice" password="alice
 
 # username和password是客户端用来配置客户端连接broker的用户，在下面配置中，客户端使用alice用户连接到broker
 KafkaClient {
@@ -130,6 +130,8 @@ Client {
 };
 
 ```
+*以上配置中KafkaServer 和 KafkaClient都配置了alice用户，因此在springboot项目中，使用PLAIN 认证时，填写该用户即可。*
+
 **问题及解决方案**
 1. 当使用 本地目录的挂载方式时，需要注意文件夹UID需要设置为1001
 > As this is a non-root container, the mounted files and directories must have the proper permissions for the UID 1001
