@@ -13,5 +13,5 @@ tagline: You cannot improve your past, but you can improve your future. Once tim
          Keep on going never give up.
 actionText: Continue →
 actionLink: /tools/
-footer: MIT Licensed | Copyright © 2022 zhuangzexin.top
+footer: MIT Licensed | Copyright © 2023 zhuangzexin.top
 ---
