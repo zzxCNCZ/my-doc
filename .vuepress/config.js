@@ -310,7 +310,8 @@ module.exports = {
                         'network',
                         'disk',
                         'status',
-                        'swap'
+                        'swap',
+                        'time'
                     ].map((i) => `system/${i}`),
                 },
                 {
