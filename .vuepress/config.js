@@ -54,7 +54,21 @@ module.exports = {
                     }
                 ]
             },
-            { text: 'Java', link: '/java/' },
+            { text: 'Java', link: '/java/',
+                items: [
+                    { text: 'JVM',
+                        items: [
+                            { text: 'JVM参数', link: '/java/jvm/' },
+                        ]
+                    },
+                    { text: 'Spring',
+                        items: [
+                            { text: 'Springboot', link: '/java/springboot/' },
+                        ]
+                    }
+                ]
+
+            },
             { text: 'Sql', link: '/sql/',
                 items: [
                     { text: 'mysql',
@@ -206,6 +220,13 @@ module.exports = {
                 },
             ],
             '/java/': [
+                {
+                    title: 'JVM',
+                    collapsable: false,
+                    children: [
+                        'common'
+                    ].map((i) => `jvm/${i}`),
+                },
                 {
                     title: 'Springboot',
                     collapsable: false,

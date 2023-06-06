@@ -69,6 +69,10 @@ networks:
       name: bridge2    #已创建的网络名
 
 ```
+**设置host模式** 与宿主机共享网络
+```yaml
+network_mode: "host"
+```
 ### 连接外部容器
 ```yaml
 external_links:

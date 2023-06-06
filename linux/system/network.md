@@ -11,6 +11,15 @@ netstat -nap|grep 8000
 
 lsof -i tcp:8080 
 ```
+
+
+### 查看tcp连接
+```shell script
+netstat -nat | awk '{print $6}' | sort | uniq -c | sort -rn
+
+netstat -n | awk '/^tcp/ {++state[$NF]} END {for(key in state) print key,"\t",state[key]}'
+```
+```
 ### 测试网速
 ```shell script
 sudo apt install speedtest-cli
