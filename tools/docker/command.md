@@ -176,6 +176,21 @@ export 导出（import 导入）是根据容器拿到的镜像，再导入时会
 docker export 的应用场景：主要用来制作基础镜像，比如我们从一个 ubuntu 镜像启动一个容器，然后安装一些软件和进行一些设置后，使用 docker export 保存为一个基础镜像。然后，把这个镜像分发给其他人使用，比如作为基础的开发环境。
 docker save 的应用场景：如果我们的应用是使用 docker-compose.yml 编排的多个镜像组合，但我们要部署的客户服务器并不能连外网。这时就可以使用 docker save 将用到的镜像打个包，然后拷贝到客户服务器上使用 docker load 载入。
 
+### 根据docker-compose.yml文件导出所有镜像
+```bash
+#!/usr/bin/env bash
+IMAGES=""
+for svc in $(docker-compose config --services); do
+  IMAGES="$IMAGES $(docker-compose images -q $svc)"
+done
+for img in $(echo $IMAGES | tr ' ' '\n' | sort | uniq); do
+  name=$(docker inspect --format='{{index .RepoTags 0}}' $img | tr '/:.' '-')
+  echo $name
+  docker save -o "${name}.tar" $img
+done
+```
+
+
 ## docker容器占用及清理
 ```shell script
 # 查看docker信息
