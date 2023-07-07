@@ -9,4 +9,5 @@
 2. [常用配置](/tools/nginx/setting.md)
 3. [代理设置](/tools/nginx/proxy_pass.md)
 4. [常见问题](/tools/nginx/problem.md)
+5. [nginx特性](/tools/nginx/doc.md)
 :::

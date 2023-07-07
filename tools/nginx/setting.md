@@ -1,4 +1,4 @@
-# 常用配置
+# nginx常用配置
 
 ## Gzip配置
 ```shell script

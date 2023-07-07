@@ -200,7 +200,8 @@ module.exports = {
                         'common',
                         'setting',
                         'proxy_pass',
-                        'problem'
+                        'problem',
+                        'doc'
                     ].map((i) => `nginx/${i}`),
                 },
                 {

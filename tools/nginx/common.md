@@ -1,4 +1,4 @@
-# 常用指令
+# nginx常用指令
 > nginx常用命令即操作
 #### 常用命令
 ```shell script

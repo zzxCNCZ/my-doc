@@ -1,4 +1,4 @@
-# proxy_pass 详解
+# nginx proxy_pass 详解
 > 代理转发配置 location 和 proxy_pass 详解
 
 ## location 和 proxy_pass 带斜杠与不带斜杠

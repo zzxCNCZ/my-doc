@@ -62,4 +62,13 @@ lvdisplay
 ```
 mount /dev/myvg/mylv /mnt/mylv
 ```
+
+#### 逻辑分区扩容
+1. 扩容逻辑分区
+```
+lvextend -L +100G /dev/myvg/mylv
+```
+2. 扩容文件系统
+```
+resize2fs /dev/myvg/mylv
 ```
