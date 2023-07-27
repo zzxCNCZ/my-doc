@@ -68,10 +68,13 @@ services:
     container_name: kafka       
     image: docker.io/bitnami/kafka:3.2
     ports:
+      - "9092:9092"
       - "9093:9093"
     volumes:
-      # 挂载配置文件
+      # 挂载配置文件, 认证配置文件
       - ./conf/kafka_jaas.conf:/opt/bitnami/kafka/config/kafka_jaas.conf
+      # kafka工具配置文件 for kafka-topics.sh
+      - ./conf/config.properties:/opt/bitnami/kafka/config/config.properties
       # 同步容器时间
       - /etc/localtime:/etc/localtime
     environment:
@@ -82,10 +85,13 @@ services:
       - KAFKA_CFG_SASL_ENABLED_MECHANISMS=PLAIN
       - KAFKA_CFG_SASL_MECHANISM_INTER_BROKER_PROTOCOL=PLAIN
       - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CLIENT:SASL_PLAINTEXT,EXTERNAL:SASL_PLAINTEXT
-      - KAFKA_CFG_LISTENERS=CLIENT://:9092,EXTERNAL://0.0.0.0:9093
-      # external 格式为 外部ip:外部port   
+      # 监听的网卡及端口 //:9092代表监听所有网卡的9092端口
+      - KAFKA_CFG_LISTENERS=CLIENT://:9092,EXTERNAL://:9093
+      # advertised.listeners 为客户端访问的地址和注册到zookeeper的地址
+      # 格式为 外部ip:外部port   
       # e.g. 映射端口为 19093:9093  外部ip 100.10.1.1  则配置为：EXTERNAL://100.10.1.1:19093
-      - KAFKA_CFG_ADVERTISED_LISTENERS=CLIENT://kafka:9092,EXTERNAL://192.168.1.127:9093
+      - KAFKA_CFG_ADVERTISED_LISTENERS=CLIENT://192.168.1.127:9092,EXTERNAL://47.111.1.120:9093
+      # 集群间通讯使用的 listener
       - KAFKA_CFG_INTER_BROKER_LISTENER_NAME=CLIENT
       # 配置SASL认证的用户名和密码
       - KAFKA_OPTS=-Djava.security.auth.login.config=/opt/bitnami/kafka/config/kafka_jaas.conf
@@ -104,7 +110,7 @@ volumes:
     driver: local
 
 ```
-kafka_jaas.conf 配置如下：
+**kafka_jaas.conf 配置如下：**
 ```bash
 # sername和password是broker用于初始化连接到其他的broker 在下面配置中，admin用户为broker间的通讯，user_userName定义了所有连接到broker和broker验证的所有的客户端连接，包括其他broker的用户密码，user_userName必须配置admin用户，否则会报错
 KafkaServer {
@@ -130,7 +136,67 @@ Client {
 };
 
 ```
+
+**config.properties 配置如下：**
+
+> 该配置文件是为了给容器内的kafka tools认证使用的，如果不需要使用kafka tools，可以不配置
+```bash
+sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="grandlynn" password="grandlynn_kafka";
+security.protocol=SASL_PLAINTEXT
+sasl.mechanism=PLAIN
+```
+- 列出所有topic
+```bash
+kafka-topics.sh --list --bootstrap-server 192.168.1.127:9092 --command-config /opt/bitnami/kafka/config/config.properties
+
+```
+- 创建topic
+```bash
+kafka-topics.sh --create  --bootstrap-server 192.168.1.127:9092 --replication-factor 2  --partitions 2 --topic TestTopic --command-config /opt/bitnami/kafka/config/config.properties
+```
+
+
 *以上配置中KafkaServer 和 KafkaClient都配置了alice用户，因此在springboot项目中，使用PLAIN 认证时，填写该用户即可。*
+
+### 集群配置
+以上例子使用zooKeeper作为集群管理，因此如果需要配置集群，只需要讲新的kafka注册到zooKeeper即可。
+e.g. 新增一个kafka节点，配置如下：
+ip: 192.168.1.102
+
+```docker-compose
+version: "2"
+
+services:
+  kafka:
+    container_name: kafka
+    image: docker.io/bitnami/kafka:3.2
+    ports:
+      - "9092:9092"
+      - "9093:9093"
+    volumes:
+      - ./conf/kafka_jaas.conf:/opt/bitnami/kafka/config/kafka_jaas.conf
+      - ./data:/bitnami/kafka
+    environment:
+      - KAFKA_BROKER_ID=2
+      - KAFKA_CFG_NODE_ID=2
+      - KAFKA_ENABLE_KRAFT=no
+      - KAFKA_CFG_ZOOKEEPER_CONNECT=192.168.1.127:2181
+      - KAFKA_CFG_SASL_ENABLED_MECHANISMS=PLAIN
+      - KAFKA_CFG_SASL_MECHANISM_INTER_BROKER_PROTOCOL=PLAIN
+      - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CLIENT:SASL_PLAINTEXT,EXTERNAL:SASL_PLAINTEXT,EXTERNAL_VPN:SASL_PLAINTEXT
+      - KAFKA_CFG_LISTENERS=CLIENT://:9092,EXTERNAL://0.0.0.0:9093
+      - KAFKA_CFG_ADVERTISED_LISTENERS=CLIENT://192.168.1.102:9092,EXTERNAL://192.168.1.102:9093
+      - KAFKA_CFG_INTER_BROKER_LISTENER_NAME=CLIENT
+      - KAFKA_OPTS=-Djava.security.auth.login.config=/opt/bitnami/kafka/config/kafka_jaas.conf
+      - KAFKA_ZOOKEEPER_PROTOCOL=SASL
+      - KAFKA_ZOOKEEPER_USER=grandlynn
+      - KAFKA_ZOOKEEPER_PASSWORD=grandlynn
+
+```
+启动后，会自动接入到zooKeeper集群中。要注意的是，新加入的节点需要配置唯一的broker_id，否则会报错。
+使用的是SASL_PLAINTEXT 认证，因此kafka_jaas.conf文件需要与其他节点保持一致。
+
+
 
 **问题及解决方案**
 1. 当使用 本地目录的挂载方式时，需要注意文件夹UID需要设置为1001

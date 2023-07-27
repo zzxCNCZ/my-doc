@@ -19,6 +19,14 @@ logging:
     options:
       max-size: 10m
 ```
+```shell script
+# 默认是用json-file驱动，可以指定为其他驱动
+    logging:
+      driver: json-file
+      options:
+        max-size: 100m
+        max-file: '5'
+```
 
 ## 设置jvm内存
 ```shell script

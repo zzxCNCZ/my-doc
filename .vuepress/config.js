@@ -216,7 +216,8 @@ module.exports = {
                     collapsable: false,
                     children: [
                         'setting',
-                        'usage'
+                        'usage',
+                        'param'
                     ].map((i) => `kafka/${i}`),
                 },
             ],
