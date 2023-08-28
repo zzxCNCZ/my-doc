@@ -16,6 +16,10 @@ module.exports = {
         search: true,
         searchMaxSuggestions: 10,
         lastUpdated: 'Last Updated',
+        // 备案号
+        record: '苏ICP备18019471号-1',
+        // 项目开始时间
+        startYear: '2020',
         nav: [
             { text: 'Home', link: '/' },
             {

@@ -1,6 +1,6 @@
 # kafka 使用方法
 
-##　Spring Boot 集成kafka
+## Spring Boot 集成kafka
 
 [Intro to Apache Kafka with Spring](https://www.baeldung.com/spring-kafka)
 
