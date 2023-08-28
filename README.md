@@ -15,3 +15,6 @@ actionText: Continue →
 actionLink: /tools/
 footer: MIT Licensed | Copyright © 2023 zhuangzexin.top
 ---
+<div style="text-align:center;margin: 30px;">
+<a href="https://beian.miit.gov.cn/" target="_blank">苏ICP备18019471号-1</a>
+</div>
