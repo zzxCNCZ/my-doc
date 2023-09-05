@@ -103,3 +103,9 @@ sudo apt install libssl-dev
 ```bash
 history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl | head -n10
 ```
+
+### ssh 创建本地端口转发
+> 这个指令的作用是通过SSH连接到远程服务器 10.48.144.148，并在本地创建一个端口转发，将本地的1153端口与远程主机41.188.137.154的80端口进行通信
+```bash
+ssh -p 80 -fCNg -L 1153:41.188.137.154:80 administrator@10.48.144.148
+```
