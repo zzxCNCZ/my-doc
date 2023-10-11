@@ -277,7 +277,8 @@ module.exports = {
                     children: [
                         'nodejs',
                         'npm',
-                        'yarn'
+                        'yarn',
+                        'pnpm'
                     ].map((i) => `nodejs/${i}`),
                 }
              ],

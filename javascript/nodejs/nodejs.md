@@ -26,7 +26,7 @@ n lts
 n rm 8.1.5
 ```
 
-- macos nvm 切换node版本
+### macos nvm 切换node版本
 #### 配置nvm
 ```bash 
 # 查看安装nvm信息指引
