@@ -24,6 +24,7 @@ services:
     volumes:
       - "kafka_data:/bitnami"
     environment:
+      #新版本 broker_id已被弃用,见注1
       - KAFKA_BROKER_ID=1   
       - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
       - ALLOW_PLAINTEXT_LISTENER=yes
@@ -42,6 +43,9 @@ volumes:
 ```
 以上docker-compose.yml 配置了提供 EXTERNAL 访问方式，对外暴露的端口为9093。设置`KAFKA_BROKER_ID`为 1(如果配置了kafka集群，
 注意要设置唯一的broker_id)。数据存储使用的volume的方式，如果要使用bind方式，修改volume为指定目录。
+
+*注1*
+新版本不需要设置broker_id,会自己生成，详见[broker_id](https://kafka.apache.org/documentation/#brokerconfigs_broker.id)
 
 ## 安全设置
 使用SASL(Simple Authentication Security Layer )认证
@@ -136,6 +140,15 @@ Client {
 };
 
 ```
+*注2*
+新版本配置client认证不需要配置jaas.conf,可以直接通过环境变量配置：
+```bash
+      - KAFKA_CLIENT_USERS=user
+      - KAFKA_CLIENT_PASSWORDS=pwd
+
+```
+
+
 
 **config.properties 配置如下：**
 
