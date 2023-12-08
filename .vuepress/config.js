@@ -230,7 +230,8 @@ module.exports = {
                     title: 'JVM',
                     collapsable: false,
                     children: [
-                        'common'
+                        'common',
+                        'memory'
                     ].map((i) => `jvm/${i}`),
                 },
                 {
