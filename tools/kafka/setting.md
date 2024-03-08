@@ -167,6 +167,11 @@ kafka-topics.sh --list --bootstrap-server 192.168.1.127:9092 --command-config /o
 ```bash
 kafka-topics.sh --create  --bootstrap-server 192.168.1.127:9092 --replication-factor 2  --partitions 2 --topic TestTopic --command-config /opt/bitnami/kafka/config/config.properties
 ```
+- 修改partition
+```bash
+kafka-topics.sh --bootstrap-server 127.0.0.1:9092 --alter --topic http-trace  --partitions 2
+
+```
 
 
 *以上配置中KafkaServer 和 KafkaClient都配置了alice用户，因此在springboot项目中，使用PLAIN 认证时，填写该用户即可。*
