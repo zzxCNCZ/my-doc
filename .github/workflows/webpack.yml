@@ -26,7 +26,7 @@ jobs:
       run: |
         npm install
         npm rum build
-        tar zcvf front.tar -C  .vuepress/dist .
+        tar zcvf /front.tar -C  .vuepress/dist .
 
     - name: copy file 
       uses: appleboy/scp-action@v0.1.7
@@ -35,8 +35,8 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-        source: "front.tar"
-        target: /home/zzx
+        source: "/front.tar"
+        target: /home/ubuntu
 
     - name: Deploy
       uses: appleboy/ssh-action@v1.0.3
