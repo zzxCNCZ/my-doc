@@ -45,4 +45,13 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-        script: whoami   
+        script: |
+          echo '================begin======================'
+          pwd
+          echo '================rm======================'
+          rm -rf /home/ubuntu/doc/*
+          echo '================cd======================'
+          #cd /home/ubuntu
+          echo '================tar======================'
+          tar zxvf front.tar -C doc
+          echo '================end======================'
