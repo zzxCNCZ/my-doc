@@ -75,6 +75,7 @@ resize2fs /dev/myvg/mylv
 
 ### 迁移磁盘
 1. 使用dd命令迁移磁盘或者分区
+
 ```bash
 # bs=4M 表示每次读取4M的数据, 默认是512字节，如果用默认的参数，会非常慢.
 # 注： 迁移磁盘会把原磁盘的所有数据迁移到新磁盘，包括分区表，分区，数据等，所以新磁盘的大小要大于等于原磁盘。eg: 原磁盘是500G，新磁盘是1T.同时迁移磁盘不是按照已存在数据的大小来迁移的，而是按照磁盘的大小来迁移的。
@@ -82,6 +83,7 @@ dd if=/dev/sda of=/dev/sdb bs=4M
 # 以上命令是迁移的磁盘，如果是迁移分区，需要指定分区号
 dd if=/dev/sda1 of=/dev/sdb1 bs=4M
 ```
+
 *注* 迁移完成后uuid跟原磁盘一样，如果是替换原磁盘，可以直接使用。
 
 ```bash
@@ -94,9 +96,17 @@ parted /dev/sdb print free
 # 将磁盘分区1扩容到最大
 sudo parted /dev/sdb resizepart 1 100%
 
+# 修复文件系统(如果是ext4文件系统，可以使用e2fsck命令修复文件系统,其他文件系统可以使用对应的命令修复文件系统)
+# 有一定几率会出现文件系统损坏，需要修复
+sudo e2fsck -fy /dev/sdb1
+
 # resize2fs命令扩容文件系统,需要一定时间
 sudo resize2fs /dev/sdb1
+
 ```
+
+[硬盘扩展parted](https://unix.stackexchange.com/questions/373063/auto-expand-last-partition-to-use-all-unallocated-space-using-parted-in-batch-m/761845#761845?newreg=ef1e245852a547709453284556ba841b)
+
 
 `2`操作不需要卸载磁盘 `1`操作需要卸载磁盘(e.g.在ubuntu live cd下操作)
 
