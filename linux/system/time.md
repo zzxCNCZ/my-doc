@@ -51,3 +51,16 @@ systemctl restart systemd-timesyncd.service
 # 配置文件路径
 /etc/systemd/timesyncd.conf
 ```
+
+### 硬件时间同步
+```bash
+# 查看硬件时间
+sudo hwclock --show
+
+# 将系统时间同步到硬件时间
+sudo hwclock --systohc
+# 将硬件时间同步到系统时间
+sudo hwclock --hctosys
+```
+
+[deepin 时间和时区](https://wiki.deepin.org/zh/%E5%BE%85%E5%88%86%E7%B1%BB/03_%E6%8C%89%E7%9F%A5%E8%AF%86%E7%82%B9%E7%AD%89%E7%BA%A7%E5%88%92%E5%88%86/01_%E4%B8%AD%E9%98%B6/09_%E6%97%B6%E9%97%B4%E7%9B%B8%E5%85%B3/%E6%97%B6%E9%97%B4%E5%92%8C%E6%97%B6%E5%8C%BA)
