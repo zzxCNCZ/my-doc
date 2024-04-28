@@ -117,11 +117,6 @@ module.exports = {
                         items: [
                             { text: '基础', link: '/sp/python/basic' }
                         ]
-                    },
-                    { text: 'Windows',
-                        items: [
-                            { text: '常用指令', link: '/win/windows' }
-                        ]
                     }
                 ] },
             {
@@ -366,15 +361,6 @@ module.exports = {
                     collapsable: false,
                     children: [
                         'basic'
-                    ],
-                }
-            ],
-            '/win/': [
-                {
-                    title: 'Windows',
-                    collapsable: false,
-                    children: [
-                        'windows'
                     ],
                 }
             ],

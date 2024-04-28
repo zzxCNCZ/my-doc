@@ -369,15 +369,6 @@ module.exports = {
                     ],
                 }
             ],
-            '/win/': [
-                {
-                    title: 'Windows',
-                    collapsable: false,
-                    children: [
-                        'windows'
-                    ],
-                }
-            ],
         },
     },
     ga: '',
