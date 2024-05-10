@@ -26,9 +26,19 @@ firewall=true
 autoProxy=true
 # 释放虚拟硬盘空间  wsl --manage 发行版名字 --set-sparse true
 sparseVhd=true
+[wsl2]
 # 内存最大值限制
 memory=4GB
-
+# CPU核心最大值限制
+processors=2
+# 交换文件大小
+swap=0
+# 启用虚拟机的动态内存分配
+dynamicMemory=true
+# 启用虚拟机的动态虚拟硬盘
+dynamicVhd=true
+# 启用虚拟机的自动启动
+autoStartup=true
 ```
 ### wsl 相关指令
 ```bash
