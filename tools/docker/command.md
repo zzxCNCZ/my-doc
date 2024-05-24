@@ -209,5 +209,8 @@ cd /var/lib/docker
 
 du -lh --max-depth=1 
 
+du -h --max-depth=1 | sort -rh
+
+
 ```
 找到对应的container或者overlay，查看占用

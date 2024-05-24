@@ -10,6 +10,10 @@ df -Th 只能看到挂载的磁盘信息(-T显示Type)
 
 # 查看当前目录下一级子文件和子目录占用的磁盘容量
 du -lh --max-depth=1 
+
+# 降序排序
+du -h --max-depth=1 | sort -rh
+
 # 检查磁盘坏道
 badblocks -v /dev/sda > badsectors.txt
 
