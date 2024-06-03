@@ -17,3 +17,17 @@ dmesg | grep -i -B100 'killed process'
 ```shell script
 top -bn 1 -i -c
 ```
+
+### 查看内存占用
+```bash
+# 使用top命令
+top
+# 使用shift m命令
+shift + m 来 按照内存占用排序
+# 使用shift f命令
+shift + f 来选择要显示的列
+# 使用shift o命令
+shift + o 来选择排序的列
+# 使用shift r命令
+shift + r 来反转排序
+```
