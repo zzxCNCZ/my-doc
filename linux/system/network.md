@@ -73,3 +73,23 @@ sudo firewall-cmd --list-ports
 # 查看所有规则
 sudo firewall-cmd --zone=public --list-all
 ```
+
+### 使用iptables转发端口
+
+```bash
+# 开启端口转发
+sudo sysctl -w net.ipv4.ip_forward=1
+# 配置端口转发
+sudo iptables -t nat -A PREROUTING -p tcp --dport 12180 -j DNAT --to-destination 20.10.32.7:12180
+# 删除端口转发规则
+sudo iptables -t nat -D PREROUTING -p tcp -- dport 12180 -j DNAT --to-destination 20.10.32.7:12180
+
+# 添加POSTROUTING规则：确保从转发流量的机器返回的流量能够正确返回到原始请求者。
+sudo iptables -t nat -A POSTROUTING -j MASQUERADE
+
+# 以上设置后不会持久化，重启后会失效，可以使用iptables-save保存规则
+sudo iptables-save > /etc/sysconfig/iptables
+
+# 查看当前转发规则
+sudo iptables -t nat -L -n
+```
