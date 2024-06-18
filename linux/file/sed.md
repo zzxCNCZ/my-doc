@@ -12,3 +12,9 @@ sed -i '/^ *$/d' replace.java
 删除带 Integer
 sed -i '/Integer/d' replace.java
 ```
+
+
+### windows下创建的脚本文件，需要转换为unix格式
+```shell script
+sed -i 's/\r$//' test.sh
+```

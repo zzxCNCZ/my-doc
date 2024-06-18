@@ -371,7 +371,7 @@ module.exports = {
             ],
             '/win/': [
                 {
-                    title: 'Windows',
+                    title: 'Windows系统',
                     collapsable: false,
                     children: [
                         'windows'
