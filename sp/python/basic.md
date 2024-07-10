@@ -44,7 +44,9 @@ pip freeze > requirements.txt
 ```
 
 ## 镜像设置
+
 临时使用镜像下载:
+
 ```bash
 pip install package-name --index-url https://mirrors.sustech.edu.cn/pypi/web/simple
 
