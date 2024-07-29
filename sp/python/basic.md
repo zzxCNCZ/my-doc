@@ -20,6 +20,47 @@ source venv/bin/activate
 deactivate
 ```
 
+## pyenv  
+automatic  installer:
+```bash
+curl https://pyenv.run | bash
+```
+
+使用按照包安装python
+```bash
+mv  Python-3.10.12.tar.xz ~/.pyenv/cache
+
+# 安装   注:安装python需要安装必要依赖
+pyenv install 3.10.12
+
+# 设置全局版本
+pyenv global 3.10.12
+
+# 使用 virtualenv插件初始化 虚拟 环境
+# pyenv virtualenv <python_version> <env_name>
+
+pyenv virtualenv 3.10.12 myenv
+
+
+# 环境变量配置，使进入shell初始化pyenv&pyenv-virtualenv 环境
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+
+# 进入目录自动激活pyenv，创建.python-version，pyenv-virtualenv会识别此文件，并在进入目录时，自动激活虚拟环境
+echo "myenv" > .python-version
+
+
+# 手动激活虚拟环境
+pyenv activate myenv
+
+# 停用虚拟环境
+pyenv deactivate
+```
+
+
 ## Python部署
 - Dockerfile
 ```dockerfile
@@ -44,8 +85,9 @@ pip freeze > requirements.txt
 ```
 
 ## 镜像设置
-
 临时使用镜像下载:
+
+
 
 ```bash
 pip install package-name --index-url https://mirrors.sustech.edu.cn/pypi/web/simple
@@ -53,3 +95,7 @@ pip install package-name --index-url https://mirrors.sustech.edu.cn/pypi/web/sim
 ```
 
 [下载镜像设置](https://mirrors.sustech.edu.cn/help/pypi.html#_2-configure-index-url)
+
+
+## Reference
+[PYPI package搜索](https://pypi.org/)
