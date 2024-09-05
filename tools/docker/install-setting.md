@@ -117,6 +117,30 @@ sudo systemctl restart docker
 
 ```
 
+## 配置docker镜像源及日志限制
+```bash
+sudo vim /etc/docker/daemon.json
+
+# 内容如下 ：
+{
+    "registry-mirrors":
+    [
+        "https://docker.940303.xyz"
+    ],
+    "insecure-registry":
+    [
+        "docker.940303.xyz"
+    ],
+    "log-driver": "json-file",
+    "log-opts":
+    {
+        "max-size": "100m",
+        "max-file": "3"
+    }
+}
+
+```
+
 ## snap版本docker镜像加速
 ```bash
 $ vim /var/snap/docker/current/config/daemon.json
