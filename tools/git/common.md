@@ -83,3 +83,16 @@ git config --global --unset http.proxy
 
 git config --global --unset https.proxy
 ```
+
+### git 试用degit去除历史信息
+
+```shell script
+# 安装degit
+npm install -g degit
+# 使用degit
+degit <repository>
+# 或试用npx执行
+npx degit <repository>
+# 例如
+degit https://github.com/banksy/learngit.git
+```
