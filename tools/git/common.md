@@ -84,7 +84,8 @@ git config --global --unset http.proxy
 git config --global --unset https.proxy
 ```
 
-### git 试用degit去除历史信息
+### 使用degit拉取并去除git仓库信息
+> degit是一个轻量级的工具，可以从git仓库中拉取文件，但是不会保留git仓库的信息，只保留最新的文件
 
 ```shell script
 # 安装degit
