@@ -140,6 +140,41 @@ sudo vim /etc/docker/daemon.json
 }
 
 ```
+## 设置镜像拉取代理
+```bash
+# 如果没有目录需要新建目录
+# sudo mkdir -p /etc/systemd/system/docker.service.d/
+
+# 编辑 /etc/systemd/system/docker.service.d/http-proxy.conf
+[Service]
+Environment="HTTP_PROXY=http://your.proxy.server:port/"
+Environment="HTTPS_PROXY=https://your.proxy.server:port/"
+Environment="NO_PROXY=localhost,127.0.0.1"
+
+# 重启docker
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+```
+
+## docker根目录迁移
+> 迁移前先关闭docker  service docker stop, 使用rsync 迁移 /var/lib/docker(docker默认目录)目录
+```shell script
+# 编辑docker daemon.json 
+vim /etc/docker/daemon.json
+
+# 加入配置
+"data-root": "/new-path/docker"
+
+# 最终配置
+cat /etc/docker/daemon.json
+# 如下
+{
+  "registry-mirrors": ["https://kt5y1m25.mirror.aliyuncs.com"], "data-root": "/new-path/docker"
+}
+
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+```
 
 ## snap版本docker镜像加速
 ```bash
