@@ -54,6 +54,7 @@ module.exports = {
                             { text: 'Nginx', link: '/tools/nginx/' },
                             { text: 'Kafka', link: '/tools/kafka/' },
                             { text: 'Wireguard', link: '/tools/wireguard/wireguard' }
+                            { text: 'Redis', link: '/tools/redis/' }
                         ]
                     }
                 ]
@@ -229,6 +230,14 @@ module.exports = {
                         'param'
                     ].map((i) => `kafka/${i}`),
                 },
+                {
+                    title: 'redis',
+                    collapsable: false,
+                    children: [
+                        'command',
+                        'install'
+                    ].map((i) => `redis/${i}`),
+                }
             ],
             '/java/': [
                 {
