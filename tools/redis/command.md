@@ -1,8 +1,10 @@
 # Redis command
-```bash
 - 获取所有key
-```
+```bash
+# 获取所有key
 keys *
+# 根据开头获取key列表
+keys sth*
 ```
 - 获取单个key(没有返回 nil)
 ```
@@ -13,8 +15,9 @@ get keyname
 set keyname keyvalue
 ```
 - 设置过期时间
-```
-EXPIRE keyname 30 # 过期时间为30秒
+```bash
+# 过期时间为30秒
+EXPIRE keyname 30 
 ```
 - 查看剩余生存时间
 ```
@@ -28,7 +31,7 @@ del key
 ```
 incr key
 ```
-- 清空整个缓存
+- 清空整个缓存(当前db)
 ```
 flushdb
 ```
