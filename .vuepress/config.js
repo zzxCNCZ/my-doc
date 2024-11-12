@@ -53,7 +53,7 @@ module.exports = {
                         items: [
                             { text: 'Nginx', link: '/tools/nginx/' },
                             { text: 'Kafka', link: '/tools/kafka/' },
-                            { text: 'Wireguard', link: '/tools/wireguard/wireguard' }
+                            { text: 'Wireguard', link: '/tools/wireguard/wireguard' },
                             { text: 'Redis', link: '/tools/redis/' }
                         ]
                     }
