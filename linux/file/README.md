@@ -13,4 +13,5 @@
 11. [sed](/linux/file/sed.md)
 12. [tree](/linux/file/tree.md)
 13. [wget](/linux/file/wget.md)
+13. [rsync](/linux/file/rsync.md)
 :::

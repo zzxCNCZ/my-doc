@@ -332,7 +332,8 @@ module.exports = {
                         'more-less',
                         'sed',
                         'tree',
-                        'wget'
+                        'wget',
+                        'rsync'
                     ].map((i) => `file/${i}`),
                 },
                 {
