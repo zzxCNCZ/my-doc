@@ -116,7 +116,7 @@ module.exports = {
                 items: [
                     { text: 'Python',
                         items: [
-                            { text: '基础', link: '/sp/python' }
+                            { text: '基础', link: '/sp/python/' }
                         ]
                     },
                     { text: 'Windows',
@@ -378,7 +378,7 @@ module.exports = {
                         'basic',
                         'pyenv',
                         'conda'
-                    ],
+                    ]
                 }
             ],
             '/win/': [
