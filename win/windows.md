@@ -16,6 +16,9 @@ winget uninstall --id Microsoft.VisualStudioCode
 
 ### wsl2配置
 `.wslconfig` 新建于配置目录下，配置完后需重启
+
+[wslconfig](https://learn.microsoft.com/zh-cn/windows/wsl/wsl-config#configuration-settings-for-wslconfig)
+
 ```bash
 [experimental]
 autoMemoryReclaim=gradual # 可以在 gradual 、dropcache 、disabled 之间选择
@@ -25,6 +28,8 @@ firewall=true
 autoProxy=true
 # 释放虚拟硬盘空间  wsl --manage 发行版名字 --set-sparse true
 sparseVhd=true
+# 可以直接穿透网络，wsl端口可以被局域网访问
+hostAddressLoopback=true
 [wsl2]
 # 内存最大值限制
 memory=4GB
