@@ -377,7 +377,8 @@ module.exports = {
                     children: [
                         'basic',
                         'pyenv',
-                        'conda'
+                        'conda',
+                        'poetry'
                     ]
                 }
             ],
