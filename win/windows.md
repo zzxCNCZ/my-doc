@@ -97,3 +97,17 @@ netsh interface portproxy show all
 # 删除端口转发规则
 netsh interface portproxy delete v4tov4 listenport=8080 listenaddress=0.0.0.0
 ```
+
+### 导出&导入wsl2镜像
+```bash
+# 查看已安装的wsl2发行版
+wsl --list --verbose
+
+# 导出wsl2镜像
+wsl --export Ubuntu-20.04 D:\backup\ubuntu-20.04-backup.tar
+
+# 导入wsl2镜像
+wsl --import <新发行版名称> <安装目录> <导出的tar文件路径>
+# 例如：
+wsl --import Ubuntu-20.04 D:\backup\ubuntu-20.04 D:\backup\ubuntu-20.04-backup.tar --version 2
+```
