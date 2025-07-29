@@ -115,3 +115,20 @@ wsl --import Ubuntu-20.04 D:\backup\ubuntu-20.04 D:\backup\ubuntu-20.04-backup.t
 # 卸载wsl2发行版
 wsl --unregister <发行版名称>
 ```
+
+### 设置启动默认用户名
+
+```bash
+# vim `/etc/wsl.conf`
+
+[user]
+default=your_username
+
+# 重启wsl2实例
+```
+
+### 允许局域网特定IP访问wsl2
+
+1. windows 防火墙配置
+   - 打开控制面板 -> 系统和安全 -> Windows Defender 防火墙 -> 高级设置
+   - 创建入站规则，自定义规则->所有程序->允许连接->指定IP地址（输入允许访问的IP地址/地址段）->完成
