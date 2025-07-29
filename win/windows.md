@@ -110,4 +110,8 @@ wsl --export Ubuntu-20.04 D:\backup\ubuntu-20.04-backup.tar
 wsl --import <新发行版名称> <安装目录> <导出的tar文件路径>
 # 例如：
 wsl --import Ubuntu-20.04 D:\backup\ubuntu-20.04 D:\backup\ubuntu-20.04-backup.tar --version 2
+
+
+# 卸载wsl2发行版
+wsl --unregister <发行版名称>
 ```
