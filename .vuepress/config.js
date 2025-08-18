@@ -293,7 +293,8 @@ module.exports = {
                         'nodejs',
                         'npm',
                         'yarn',
-                        'pnpm'
+                        'pnpm',
+                        'volta',
                     ].map((i) => `nodejs/${i}`),
                 }
              ],
