@@ -123,6 +123,11 @@ module.exports = {
                         items: [
                             { text: '常用指令', link: '/win/windows' }
                         ]
+                    },
+                    { text: 'Markdown',
+                        items: [
+                            { text: '高阶使用', link: '/sp/markdown/' }
+                        ]
                     }
                 ] },
             {
@@ -392,6 +397,17 @@ module.exports = {
                     ],
                 }
             ],
+            '/sp/markdown/': [
+                {
+                    title: 'mermaid',
+                    collapsable: false,
+                    children: [
+                        'gantt',
+                        'flowchart',
+                        'sequence-diagram'
+                    ],
+                }
+            ]
         },
     },
     ga: '',
