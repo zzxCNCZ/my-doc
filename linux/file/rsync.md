@@ -67,6 +67,9 @@ rsync [options] source destination
     ```bash
     # H为迁移时保留硬链接
     nohup sudo rsync -avH --progress /media/ /store/media/ > /store/rsync.log 2>&1 &
+
+   # 排除文件
+   nohup sudo rsync -avH --progress  --exclude 'folder_name_a' --exclude 'folder_name_b'  /store/share/PT/  /media/share/PT/  > /media/pt.log  2>&1 &
     ```
 
 ### 常见错误及解决

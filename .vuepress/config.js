@@ -205,7 +205,8 @@ module.exports = {
                     children: [
                         'common',
                         'branch',
-                        'tag'
+                        'tag',
+                        'worktree'
                     ].map((i) => `git/${i}`),
                 },
                 {

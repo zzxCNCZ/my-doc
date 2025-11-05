@@ -6,4 +6,5 @@
 ::: tip 包含以下模块
 1. [常用指令](/tools/git/common.md)
 2. [分支操作](/tools/git/branch.md)
+3. [worktree](/tools/git/worktree.md)
 :::
