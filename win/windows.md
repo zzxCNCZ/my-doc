@@ -132,3 +132,15 @@ default=your_username
 1. windows 防火墙配置
    - 打开控制面板 -> 系统和安全 -> Windows Defender 防火墙 -> 高级设置
    - 创建入站规则，自定义规则->所有程序->允许连接->指定IP地址（输入允许访问的IP地址/地址段）->完成
+
+### 压缩 vhdx 磁盘
+```bash
+# 关闭wsl2实例
+wsl --shutdown
+# 使用diskpart工具,使用管理员打开 powershell
+diskpart
+#  在 diskpart中执行 选择要压缩的虚拟硬盘文件
+select vdisk file="D:\wsl\ubuntu-22.04\ext4.vhdx"
+compact vdisk
+exit
+````
