@@ -5,4 +5,5 @@
 2. [pyenv](./pyenv.md)
 3. [conda](./conda.md)
 4. [poetry](./poetry.md)
+5. [uv](./uv.md)
 :::

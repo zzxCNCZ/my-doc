@@ -385,7 +385,8 @@ module.exports = {
                         'basic',
                         'pyenv',
                         'conda',
-                        'poetry'
+                        'poetry',
+                        'uv'
                     ]
                 }
             ],
