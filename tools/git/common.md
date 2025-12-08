@@ -97,3 +97,40 @@ npx degit <repository>
 # 例如
 degit https://github.com/banksy/learngit.git
 ```
+
+### github.com多账号时的设备配置
+> 当在一台设备上使用多个github账号时，可以通过配置ssh的方式来区分不同账号的操作
+```bash
+# 生成ssh密钥 主账号时的已经存在的配置
+ssh-keygen -t rsa -C "your_email@gmail.com"
+# 将生成的公钥添加到github账号中
+cat ~/.ssh/id_rsa.pub
+# 配置ssh
+# 创建config文件
+touch ~/.ssh/config
+# 编辑config文件
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_rsa
+    IdentitiesOnly yes
+
+
+# 为工作账号生成新的ssh密钥
+ssh-keygen -t rsa -C "your_email@work.com" -f ~/.ssh/folder/id_rsa
+
+Host github-work
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/folder/id_rsa
+    IdentitiesOnly yes
+# 保存后，使用不同的Host来区分不同账号,使用工作账号时使用github-work,在 clone时指定Host
+
+#测试连接
+ssh -T git@github-work
+# 会看到类似下面的提示
+# Hi your_username! You've successfully authenticated, but GitHub does not provide shell access.
+
+# 例如使用工作账号时
+git clone git@github-work:your_username/your_repo.git
+```
