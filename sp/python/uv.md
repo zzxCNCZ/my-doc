@@ -93,7 +93,15 @@ pdm add -d pytest black ruff
 
 
 #导出 requirements（用于 docker 构建）
-pdm export -f requirements --without-hashes -o requirements.txt
+# pdm 管理时的导出方式
+# pdm export -f requirements --without-hashes -o requirements.txt
+
+# 使用uv管理包时，需要使用uv导出
+uv export --format requirements-txt > requirements.txt
+
+# 不添加注释等
+uv export --format requirements-txt --no-hashes --no-dev --no-annotate --no-header -o requirements.txt
+
 
 # 同步锁定文件
 pdm sync
