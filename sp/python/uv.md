@@ -46,7 +46,7 @@ curl https://mise.run | sh
 #在 mise 中声明 Python & 工具
 # 在 $HOME/.config/mise/config.toml
 [tools]
-python = "3.12"
+python = "3.12.12"
 pdm = "latest"
 uv = "latest"
 
@@ -68,7 +68,7 @@ pdm  config
 ```bash
 # .mise.toml
 [tools]
-python = "3.12"
+python = "3.12.12"
 pdm = "latest"
 uv = "latest"
 
@@ -128,7 +128,8 @@ pdm list
 | 安装所有依赖       | `pdm install`             |
 | 运行脚本         | `uv run python script.py` |
 | 测试           | `uv run pytest`           |
-| 清理虚拟环境       | `pdm venv remove`         |
+| 清理虚拟环境       | `pdm venv remove <name e.g. in-project>`         |
+| 创建虚拟环境       | `pdm venv create`         |
 | 切换 Python 版本 | `mise use python@3.12`    |
 | 锁定           | `pdm lock`                |
 
